@@ -60,7 +60,7 @@ def get_data(dataset_dir, height, width, batch_size, workers):
 
 def  main(args):
     df = pd.read_csv('../dataset/label.csv')
-    num_classes = max(df.newId[2])
+    num_classes = max(list(map(int,df.newId[1])))
     print(num_classes)
 
     os.environ["CUDA_VISIBLE_DEVICES"] = "0"
