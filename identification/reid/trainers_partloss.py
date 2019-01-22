@@ -90,12 +90,16 @@ class Trainer(BaseTrainer):
             # loss6 = self.criterion(outputs[1][6], targets)
             # loss7 = self.criterion(outputs[1][7], targets)
             prec, = accuracy(outputs[1][1].data, targets.data)
-            prec = prec[0]
+            print(prec)
+
+            prec = prec.item()
                         
         elif isinstance(self.criterion, OIMLoss):
             loss, outputs = self.criterion(outputs, targets)
             prec, = accuracy(outputs.data, targets.data)
-            prec = prec[0]
+            print(prec)
+
+            prec = prec.item()
         elif isinstance(self.criterion, TripletLoss):
             loss, prec = self.criterion(outputs, targets)
         else:
