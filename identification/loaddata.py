@@ -9,7 +9,7 @@ import torch
 from torch import nn
 from torch.backends import cudnn
 from torch.utils.data import DataLoader
-
+import pandas as pd
 
 from reid import datasets
 from reid import models
@@ -25,7 +25,7 @@ from reid.utils.serialization import load_checkpoint, save_checkpoint
 def get_data(dataset_dir, height, width, batch_size, workers):
 
     train_filepath = osp.join(dataset_dir,'train/')
-    csv_path = osp.join(dataset_dir,'train.csv')
+    csv_path = osp.join(dataset_dir,'label.csv')
     test_filepath = osp.join(dataset_dir,'test/')
 
     normalizer = T.Normalize(mean=[0.485, 0.456, 0.406],
@@ -59,7 +59,12 @@ def get_data(dataset_dir, height, width, batch_size, workers):
 
 
 def  main(args):
+    # df = pd.read_csv('../dataset/label.csv')
+    # num_classes = max(list(map(int,df.newId[1])))
+    # print(num_classes)
+    num_classes = 5005
     os.environ["CUDA_VISIBLE_DEVICES"] = "0"
+
     #device_ids = [0, 1, 2, 3]
     np.random.seed(args.seed)
     torch.manual_seed(args.seed)
@@ -74,7 +79,7 @@ def  main(args):
     if args.height is None or args.width is None:
         args.height, args.width = (256, 256)
 
-    num_classes = 5005#get by df['Id'].nunique()
+    #num_classes = 5005#get by df['Id'].nunique()
     train_loader = \
         get_data(args.data_dir, args.height,
                  args.width, args.batch_size, args.workers,

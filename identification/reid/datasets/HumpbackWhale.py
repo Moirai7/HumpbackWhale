@@ -33,23 +33,20 @@ class HW_Dataset(object):
         return (len(self.image_list))
 
     def __getitem__(self, idx):
-        self.df["Image"] = self.df["Image"].map(lambda x: "../dataset/train/" + x)
-        ImageToLabelDict = dict(zip(self.df["Image"], self.df["Id"]))
-        print(ImageToLabelDict)
+
+
         img_path = os.path.join(self.file_path, self.df.Image[idx])
         label = self.df.Id[idx]
+        new_label = self.df.newId[idx]
 
         # img = cv2.imread(img_path)
         # img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
         imgs = Image.open(img_path)
-        y = list(map(ImageToLabelDict.get, imgs))
-        lohe = LabelOneHotEncoder()
-        y_cat = lohe.fit_transform(y)
-        print("num_calss:", len(y_cat.toarray()[0]))
+
         imgs = imgs.convert('RGB')
         imgs = self.transform(imgs)
 
-        return imgs, y_cat
+        return imgs, new_label
 
 
 

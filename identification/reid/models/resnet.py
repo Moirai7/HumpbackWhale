@@ -41,7 +41,7 @@ class ResNet(nn.Module):
                     mo.stride = (1,1)
 #================append conv for FCN==============================#
             self.num_features = num_features
-            self.num_classes = 5005 #num_classes
+            self.num_classes = num_classes #num_classes
             self.dropout = dropout
             out_planes = self.base.fc.in_features
             self.local_conv = nn.Conv2d(out_planes, self.num_features, kernel_size=1,padding=0,bias=False)
@@ -138,9 +138,9 @@ class ResNet(nn.Module):
         if self.FCN:
             y = x.unsqueeze(1)
             y = F.avg_pool3d(x,(16,1,1)).squeeze(1)
-            sx = x.size(3)/2
+            sx = x.size(3)//2
             kx = x.size(3)-sx
-            x = F.avg_pool2d(x,kernel_size=(x.size(2),kx),stride=(x.size(2),sx))   # H4 W8
+            x = F.avg_pool2d(x,kernel_size=(x.size(2),int(kx)),stride=(x.size(2),int(sx)))   # H4 W8
 #========================================================================#            
 
             out0 = x.view(x.size(0),-1)#这样破坏了x的四维结构的，只变成二维

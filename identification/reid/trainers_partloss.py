@@ -33,7 +33,7 @@ class BaseTrainer(object):
             loss0, loss1 , prec1 = self._forward(inputs, targets)# , loss2, loss3,, loss4, loss5, loss6, loss7
 #===================================================================================
             loss = (loss0+loss1)/2#+loss2+loss3+loss4+loss5+loss6+loss7
-            losses.update(loss.data[0], targets.size(0))
+            losses.update(loss.data, targets.size(0))
             precisions.update(prec1, targets.size(0))
 
             optimizer.zero_grad()#, loss2, loss3,loss4, loss5, loss6, loss7     , torch.tensor(1.0).cuda(),torch.tensor(1.0).cuda(),torch.tensor(1.0).cuda(),torch.tensor(1.0).cuda(),torch.tensor(1.0).cuda(),torch.tensor(1.0).cuda(),torch.tensor(1.0).cuda()
@@ -72,9 +72,8 @@ class Trainer(BaseTrainer):
         imgs, pids = inputs
         inputs = [Variable(imgs)]
         #targets = Variable(pids)
-        print(pids)
-
-        targets = Variable(torch.FloatTensor(pids).cuda())
+        #print(pids)
+        targets = Variable(torch.LongTensor(list(map(int, pids))).cuda())
         return inputs, targets
 
     def _forward(self, inputs, targets):
@@ -90,15 +89,23 @@ class Trainer(BaseTrainer):
             # loss5 = self.criterion(outputs[1][5],targets)
             # loss6 = self.criterion(outputs[1][6], targets)
             # loss7 = self.criterion(outputs[1][7], targets)
-            prec, = accuracy(outputs[1][2].data, targets.data)
-            prec = prec[0]
+            prec, = accuracy(outputs[1][1].data, targets.data)
+
+            # print(outputs[1][0],len(outputs[1][0]))
+            # print(targets.data)
+            # print(prec)
+            # print(loss0,loss1.data)
+
+            prec = prec.item()
                         
         elif isinstance(self.criterion, OIMLoss):
             loss, outputs = self.criterion(outputs, targets)
             prec, = accuracy(outputs.data, targets.data)
-            prec = prec[0]
+            print(prec)
+
+            prec = prec.item()
         elif isinstance(self.criterion, TripletLoss):
             loss, prec = self.criterion(outputs, targets)
         else:
             raise ValueError("Unsupported loss:", self.criterion)
-        return loss0, loss1 #, loss2, loss3, prec # loss4, loss5, loss6, loss7
+        return loss0, loss1,prec #, loss2, loss3, prec # loss4, loss5, loss6, loss7
