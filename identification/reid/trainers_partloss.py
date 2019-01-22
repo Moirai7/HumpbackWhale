@@ -72,7 +72,7 @@ class Trainer(BaseTrainer):
         imgs, pids = inputs
         inputs = [Variable(imgs)]
         #targets = Variable(pids)
-        print(pids)
+        #print(pids)
         targets = Variable(torch.LongTensor(list(map(int, pids))).cuda())
         return inputs, targets
 

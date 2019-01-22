@@ -59,8 +59,10 @@ def get_data(dataset_dir, height, width, batch_size, workers):
 
 
 def  main(args):
-    # df = pd.read_csv('../dataset/label.csv')
-    # print(df.newId)
+    df = pd.read_csv('../dataset/label.csv')
+    num_classes = max(df.newId[2])
+    print(num_classes)
+
     os.environ["CUDA_VISIBLE_DEVICES"] = "0"
 
     #device_ids = [0, 1, 2, 3]
@@ -77,7 +79,7 @@ def  main(args):
     if args.height is None or args.width is None:
         args.height, args.width = (256, 256)
 
-    num_classes = 5005#get by df['Id'].nunique()
+    #num_classes = 5005#get by df['Id'].nunique()
     train_loader = \
         get_data(args.data_dir, args.height,
                  args.width, args.batch_size, args.workers,
