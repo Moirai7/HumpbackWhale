@@ -70,7 +70,6 @@ extension ViewController: UIImagePickerControllerDelegate {
     }
     
     func processImage(_ image: UIImage) {
-        let model = Food101()
         let size = CGSize(width: 299, height: 299)
         
         guard let buffer = image.resize(to: size)?.pixelBuffer() else {
