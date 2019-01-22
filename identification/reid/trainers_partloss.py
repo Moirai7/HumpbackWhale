@@ -81,7 +81,7 @@ class LabelOneHotEncoder():
 class Trainer(BaseTrainer):
 
     def _parse_data(self, inputs):
-        imgs,  pids, ImageToLabelDict = inputs
+        imgs, pids, ImageToLabelDict = inputs
         inputs = [Variable(imgs)]
         #targets = Variable(pids)
 

@@ -8,7 +8,7 @@ import pandas as pd
 from PIL import Image
 import os
 
-class HW_Dataset(Dataset):
+class HW_Dataset(object):
     def __init__(self, filepath, csv_path, transform=None):
         self.file_path = filepath
         self.df = pd.read_csv(csv_path)
@@ -21,6 +21,7 @@ class HW_Dataset(Dataset):
     def __getitem__(self, idx):
         self.df["Image"] = self.df["Image"].map(lambda x: "../dataset/train/" + x)
         ImageToLabelDict = dict(zip(self.df["Image"], self.df["Id"]))
+        print(ImageToLabelDict)
         img_path = os.path.join(self.file_path, self.df.Image[idx])
         label = self.df.Id[idx]
 
