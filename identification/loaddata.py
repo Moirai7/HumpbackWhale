@@ -59,7 +59,7 @@ def get_data(dataset_dir, height, width, batch_size, workers):
 
 
 def  main(args):
-    df = pd.read_csv('../input/train.csv')
+    df = pd.read_csv('../dataset/label.csv')
     print(df.NewId)
     os.environ["CUDA_VISIBLE_DEVICES"] = "0"
 

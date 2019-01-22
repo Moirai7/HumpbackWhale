@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dcb3f7f7-dbf6-4b30-948c-8d1a3c1f582c" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/identification/loaddata.py" afterPath="$PROJECT_DIR$/identification/loaddata.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -17,7 +16,7 @@
       <file leaf-file-name="loaddata.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/identification/loaddata.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="232">
+            <state relative-caret-position="145">
               <caret line="62" column="19" lean-forward="true" selection-start-line="62" selection-start-column="19" selection-end-line="62" selection-end-column="19" />
               <folding>
                 <element signature="e#0#54#0" expanded="true" />
@@ -356,7 +355,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/identification/loaddata.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="232">
+        <state relative-caret-position="145">
           <caret line="62" column="19" lean-forward="true" selection-start-line="62" selection-start-column="19" selection-end-line="62" selection-end-column="19" />
           <folding>
             <element signature="e#0#54#0" expanded="true" />
