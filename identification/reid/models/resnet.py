@@ -61,35 +61,35 @@ class ResNet(nn.Module):
             init.normal(self.instance1.weight, std=0.001)
             init.constant(self.instance1.bias, 0)
 ##---------------------------stripe1----------------------------------------------#
-##---------------------------stripe1----------------------------------------------#
-            self.instance2 = nn.Linear(self.num_features, self.num_classes)
-            init.normal(self.instance2.weight, std=0.001)
-            init.constant(self.instance2.bias, 0)
-##---------------------------stripe1----------------------------------------------#
-##---------------------------stripe1----------------------------------------------#
-            self.instance3 = nn.Linear(self.num_features, self.num_classes)
-            init.normal(self.instance3.weight, std=0.001)
-            init.constant(self.instance3.bias, 0)
-##---------------------------stripe1----------------------------------------------#
-##---------------------------stripe1----------------------------------------------#
-            self.instance4 = nn.Linear(self.num_features, self.num_classes)
-            init.normal(self.instance4.weight, std=0.001)
-            init.constant(self.instance4.bias, 0)
-##---------------------------stripe1----------------------------------------------#
-##---------------------------stripe1----------------------------------------------#
-            self.instance5 = nn.Linear(self.num_features, self.num_classes)
-            init.normal(self.instance5.weight, std=0.001)
-            init.constant(self.instance5.bias, 0)
-##---------------------------stripe1----------------------------------------------#
-            self.instance6 = nn.Linear(self.num_features, self.num_classes)
-            init.normal(self.instance6.weight, std=0.001)
-            init.constant(self.instance6.bias, 0)
-##---------------------------stripe1----------------------------------------------#
-##---------------------------stripe1----------------------------------------------#
-            self.instance7 = nn.Linear(self.num_features, self.num_classes)
-            init.normal(self.instance7.weight, std=0.001)
-            init.constant(self.instance7.bias, 0)
-##---------------------------stripe1----------------------------------------------#
+# ##---------------------------stripe1----------------------------------------------#
+#             self.instance2 = nn.Linear(self.num_features, self.num_classes)
+#             init.normal(self.instance2.weight, std=0.001)
+#             init.constant(self.instance2.bias, 0)
+# ##---------------------------stripe1----------------------------------------------#
+# ##---------------------------stripe1----------------------------------------------#
+#             self.instance3 = nn.Linear(self.num_features, self.num_classes)
+#             init.normal(self.instance3.weight, std=0.001)
+#             init.constant(self.instance3.bias, 0)
+# ##---------------------------stripe1----------------------------------------------#
+# ##---------------------------stripe1----------------------------------------------#
+#             self.instance4 = nn.Linear(self.num_features, self.num_classes)
+#             init.normal(self.instance4.weight, std=0.001)
+#             init.constant(self.instance4.bias, 0)
+# ##---------------------------stripe1----------------------------------------------#
+# ##---------------------------stripe1----------------------------------------------#
+#             self.instance5 = nn.Linear(self.num_features, self.num_classes)
+#             init.normal(self.instance5.weight, std=0.001)
+#             init.constant(self.instance5.bias, 0)
+# ##---------------------------stripe1----------------------------------------------#
+#             self.instance6 = nn.Linear(self.num_features, self.num_classes)
+#             init.normal(self.instance6.weight, std=0.001)
+#             init.constant(self.instance6.bias, 0)
+# ##---------------------------stripe1----------------------------------------------#
+# ##---------------------------stripe1----------------------------------------------#
+#             self.instance7 = nn.Linear(self.num_features, self.num_classes)
+#             init.normal(self.instance7.weight, std=0.001)
+#             init.constant(self.instance7.bias, 0)
+# ##---------------------------stripe1----------------------------------------------#
 
 
             self.drop = nn.Dropout(self.dropout)
@@ -138,9 +138,9 @@ class ResNet(nn.Module):
         if self.FCN:
             y = x.unsqueeze(1)
             y = F.avg_pool3d(x,(16,1,1)).squeeze(1)
-            sx = x.size(2)/4
-            kx = x.size(2)-sx*3
-            x = F.avg_pool2d(x,kernel_size=(kx,x.size(3)),stride=(sx,x.size(3)))   # H4 W8
+            sx = x.size(3)/2
+            kx = x.size(3)-sx
+            x = F.avg_pool2d(x,kernel_size=(x.size(2),kx),stride=(x.size(2),sx))   # H4 W8
 #========================================================================#            
 
             out0 = x.view(x.size(0),-1)#这样破坏了x的四维结构的，只变成二维
@@ -151,11 +151,11 @@ class ResNet(nn.Module):
             x = self.feat_bn2d(x)
             x = F.relu(x) # relu for local_conv feature
             
-            x = x.chunk(8,2)
+            x = x.chunk(2,3)
             x0 = x[0].contiguous().view(x[0].size(0),-1)
             x1 = x[1].contiguous().view(x[1].size(0),-1)
-            x2 = x[2].contiguous().view(x[2].size(0),-1)
-            x3 = x[3].contiguous().view(x[3].size(0),-1)
+            # x2 = x[2].contiguous().view(x[2].size(0),-1)
+            # x3 = x[3].contiguous().view(x[3].size(0),-1)
             #x4 = x[4].contiguous().view(x[4].size(0),-1)
             #x5 = x[5].contiguous().view(x[5].size(0),-1)
             #x6 = x[6].contiguous().view(x[6].size(0), -1)
@@ -163,13 +163,13 @@ class ResNet(nn.Module):
 
             c0 = self.instance0(x0)
             c1 = self.instance1(x1)
-            c2 = self.instance2(x2)
-            c3 = self.instance3(x3)
+            # c2 = self.instance2(x2)
+            # c3 = self.instance3(x3)
             #c4 = self.instance4(x4)
             #c5 = self.instance5(x5)
             #c6 = self.instance4(x6)
             #c7 = self.instance5(x7)
-            return out0, (c0, c1, c2, c3)# c4, c5, c6, c7
+            return out0, (c0, c1)# , c2, c3, c4, c5, c6, c7
 
 #==========================================================#
 
