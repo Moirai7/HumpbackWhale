@@ -33,7 +33,7 @@ class BaseTrainer(object):
             loss0, loss1 , prec1 = self._forward(inputs, targets)# , loss2, loss3,, loss4, loss5, loss6, loss7
 #===================================================================================
             loss = (loss0+loss1)/2#+loss2+loss3+loss4+loss5+loss6+loss7
-            losses.update(loss.data[0], targets.size(0))
+            losses.update(loss.data, targets.size(0))
             precisions.update(prec1, targets.size(0))
 
             optimizer.zero_grad()#, loss2, loss3,loss4, loss5, loss6, loss7     , torch.tensor(1.0).cuda(),torch.tensor(1.0).cuda(),torch.tensor(1.0).cuda(),torch.tensor(1.0).cuda(),torch.tensor(1.0).cuda(),torch.tensor(1.0).cuda(),torch.tensor(1.0).cuda()
@@ -93,7 +93,7 @@ class Trainer(BaseTrainer):
             print(outputs[1][0],len(outputs[1][0]))
             print(targets.data)
             print(prec)
-            print(loss0,loss1)
+            print(loss0,loss1.data)
 
             prec = prec.item()
                         
