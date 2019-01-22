@@ -66,8 +66,6 @@ class BaseTrainer(object):
 
 
 class Trainer(BaseTrainer):
-    def deal_pids(self,pids):
-
 
     def _parse_data(self, inputs):
         imgs,  pids = inputs
