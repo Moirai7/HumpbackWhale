@@ -90,10 +90,11 @@ class Trainer(BaseTrainer):
             # loss6 = self.criterion(outputs[1][6], targets)
             # loss7 = self.criterion(outputs[1][7], targets)
             prec, = accuracy(outputs[1][1].data, targets.data)
-            print(outputs[1][0],len(outputs[1][0]))
-            print(targets.data)
-            print(prec)
-            print(loss0,loss1.data)
+
+            # print(outputs[1][0],len(outputs[1][0]))
+            # print(targets.data)
+            # print(prec)
+            # print(loss0,loss1.data)
 
             prec = prec.item()
                         
