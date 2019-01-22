@@ -72,9 +72,8 @@ class Trainer(BaseTrainer):
         imgs, pids = inputs
         inputs = [Variable(imgs)]
         #targets = Variable(pids)
-        print(pids)
-
-        targets = Variable(torch.FloatTensor(int(pids)).cuda())
+        
+        targets = Variable(torch.FloatTensor(list(map(int, pids))).cuda())
         return inputs, targets
 
     def _forward(self, inputs, targets):
