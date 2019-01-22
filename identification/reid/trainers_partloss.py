@@ -28,7 +28,7 @@ class BaseTrainer(object):
         bar = Bar('Processing', max=len(data_loader))
         for i, inputs in enumerate(data_loader):
             data_time.update(time.time() - end)
-
+            print(inputs)
             inputs, targets = self._parse_data(inputs)
             loss0, loss1 , prec1 = self._forward(inputs, targets)# , loss2, loss3,, loss4, loss5, loss6, loss7
 #===================================================================================
