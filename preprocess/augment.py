@@ -5,7 +5,7 @@ from imgaug import augmenters as iaa
 import random
 
 def aug(images):
-	noise = random.random()/4
+	noise = random.random()/8
 	blur = random.random()
 	contrast = random.random()/2+1
 	rotate = random.random()*10
@@ -36,7 +36,7 @@ for filename in os.listdir(folder):
 		fn = filename.split('.')
 		fn = fn[0]+'_0.'+fn[1]
 		scipy.misc.imsave(os.path.join(savefolder,fn), augimg[0])
-                for i in range(1,int(random.random()*10+1)):
+		for i in range(1,int(random.random()*10+1)):
 			augimg = aug([img])
 			fn = filename.split('.')
 			fn = fn[0]+'_'+str(i)+'.'+fn[1]
