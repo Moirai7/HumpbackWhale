@@ -30,7 +30,7 @@ class HW_Dataset(object):
         img = Image.open(img_path).convert('RGB')
         img = self.transform(img)
 
-        return img, label, ImageToLabelDict
+        return (img, label, ImageToLabelDict)
 
 
 
