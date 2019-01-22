@@ -66,11 +66,22 @@ class BaseTrainer(object):
 
 
 class Trainer(BaseTrainer):
+    def deal_pids(self,pids):
+
+
     def _parse_data(self, inputs):
         imgs,  pids = inputs
         inputs = [Variable(imgs)]
         #targets = Variable(pids)
-        targets = Variable(torch.FloatTensor(list(map(int, pids))).cuda())
+
+        pids_number = []
+        for str in pids:
+            if str == "new_whale":
+                pids_number.append(0)
+            else:
+                pids_number.append(int(str[2:], 16))
+
+        targets = Variable(torch.FloatTensor(pids_number).cuda())
         return inputs, targets
 
     def _forward(self, inputs, targets):
