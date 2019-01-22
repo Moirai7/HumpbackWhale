@@ -70,7 +70,7 @@ class Trainer(BaseTrainer):
         imgs,  pids = inputs
         inputs = [Variable(imgs)]
         #targets = Variable(pids)
-        targets = Variable(pids.cuda())
+        targets = Variable(torch.FloatTensor(pids).cuda())
         return inputs, targets
 
     def _forward(self, inputs, targets):
