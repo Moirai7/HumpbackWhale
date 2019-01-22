@@ -2,4 +2,3 @@ pip install six numpy scipy Pillow matplotlib scikit-image opencv-python imageio
 pip install imgaug --user
 mkdir ../newdataset
 mkdir ../newdataset/train
-python augment.py
