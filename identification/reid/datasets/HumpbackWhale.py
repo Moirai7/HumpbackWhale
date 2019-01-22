@@ -18,6 +18,8 @@ class HW_Dataset(Dataset):
         return (len(self.image_list))
 
     def __getitem__(self, idx):
+        self.df["Image"] = self.df["Image"].map(lambda x: "../dataset/train/" + x)
+        ImageToLabelDict = dict(zip(self.df["Image"], self.df["Id"]))
         img_path = os.path.join(self.file_path, self.df.Image[idx])
         label = self.df.Id[idx]
 
@@ -26,7 +28,7 @@ class HW_Dataset(Dataset):
         img = Image.open(img_path).convert('RGB')
         img = self.transform(img)
 
-        return img, label
+        return img, label,ImageToLabelDict
 
 
 
