@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dcb3f7f7-dbf6-4b30-948c-8d1a3c1f582c" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/identification/reid/trainers_partloss.py" afterPath="$PROJECT_DIR$/identification/reid/trainers_partloss.py" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/identification/loaddata.py" afterPath="$PROJECT_DIR$/identification/loaddata.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -13,11 +14,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="loaddata.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="loaddata.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/identification/loaddata.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="309">
-              <caret line="32" column="0" lean-forward="true" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+            <state relative-caret-position="232">
+              <caret line="62" column="19" lean-forward="true" selection-start-line="62" selection-start-column="19" selection-end-line="62" selection-end-column="19" />
               <folding>
                 <element signature="e#0#54#0" expanded="true" />
               </folding>
@@ -28,8 +29,8 @@
       <file leaf-file-name="trainers_partloss.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/identification/reid/trainers_partloss.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="250">
-              <caret line="70" column="29" lean-forward="false" selection-start-line="70" selection-start-column="29" selection-end-line="70" selection-end-column="29" />
+            <state relative-caret-position="434">
+              <caret line="30" column="13" lean-forward="true" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="13" />
               <folding>
                 <element signature="e#0#54#0" expanded="true" />
               </folding>
@@ -37,11 +38,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="HumpbackWhale.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="HumpbackWhale.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/identification/reid/datasets/HumpbackWhale.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="386">
-              <caret line="40" column="0" lean-forward="true" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
+            <state relative-caret-position="570">
+              <caret line="48" column="21" lean-forward="true" selection-start-line="48" selection-start-column="21" selection-end-line="48" selection-end-column="21" />
               <folding>
                 <element signature="e#0#54#0" expanded="true" />
               </folding>
@@ -130,6 +131,7 @@
       <find>train</find>
       <find>pd</find>
       <find>_parse_data</find>
+      <find>csv</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -139,9 +141,9 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/identification/reid/models/resnet.py" />
+        <option value="$PROJECT_DIR$/identification/reid/trainers_partloss.py" />
         <option value="$PROJECT_DIR$/identification/reid/datasets/HumpbackWhale.py" />
         <option value="$PROJECT_DIR$/identification/loaddata.py" />
-        <option value="$PROJECT_DIR$/identification/reid/trainers_partloss.py" />
       </list>
     </option>
   </component>
@@ -306,14 +308,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/identification/model.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23">
-          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/identification/reid/datasets/market.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="203">
@@ -332,10 +326,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/identification/loaddata.py">
+    <entry file="file://$PROJECT_DIR$/identification/reid/datasets/HumpbackWhale.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="309">
-          <caret line="32" column="0" lean-forward="true" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+        <state relative-caret-position="570">
+          <caret line="48" column="21" lean-forward="true" selection-start-line="48" selection-start-column="21" selection-end-line="48" selection-end-column="21" />
           <folding>
             <element signature="e#0#54#0" expanded="true" />
           </folding>
@@ -344,18 +338,26 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/identification/reid/trainers_partloss.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="70" column="29" lean-forward="false" selection-start-line="70" selection-start-column="29" selection-end-line="70" selection-end-column="29" />
+        <state relative-caret-position="434">
+          <caret line="30" column="13" lean-forward="true" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="13" />
           <folding>
             <element signature="e#0#54#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/identification/reid/datasets/HumpbackWhale.py">
+    <entry file="file://$PROJECT_DIR$/identification/model.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="386">
-          <caret line="40" column="0" lean-forward="true" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
+        <state relative-caret-position="23">
+          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/identification/loaddata.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="232">
+          <caret line="62" column="19" lean-forward="true" selection-start-line="62" selection-start-column="19" selection-end-line="62" selection-end-column="19" />
           <folding>
             <element signature="e#0#54#0" expanded="true" />
           </folding>

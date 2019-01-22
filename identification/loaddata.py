@@ -9,7 +9,7 @@ import torch
 from torch import nn
 from torch.backends import cudnn
 from torch.utils.data import DataLoader
-
+import pandas as pd
 
 from reid import datasets
 from reid import models
@@ -59,7 +59,10 @@ def get_data(dataset_dir, height, width, batch_size, workers):
 
 
 def  main(args):
+    df = pd.read_csv('../input/train.csv')
+    print(df.NewId)
     os.environ["CUDA_VISIBLE_DEVICES"] = "0"
+
     #device_ids = [0, 1, 2, 3]
     np.random.seed(args.seed)
     torch.manual_seed(args.seed)
