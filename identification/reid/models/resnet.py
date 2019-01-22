@@ -138,7 +138,7 @@ class ResNet(nn.Module):
         if self.FCN:
             y = x.unsqueeze(1)
             y = F.avg_pool3d(x,(16,1,1)).squeeze(1)
-            sx = x.size(3)/2
+            sx = x.size(3)//2
             kx = x.size(3)-sx
             x = F.avg_pool2d(x,kernel_size=(x.size(2),int(kx)),stride=(x.size(2),int(sx)))   # H4 W8
 #========================================================================#            

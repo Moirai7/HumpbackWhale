@@ -59,10 +59,10 @@ def get_data(dataset_dir, height, width, batch_size, workers):
 
 
 def  main(args):
-    df = pd.read_csv('../dataset/label.csv')
-    num_classes = max(list(map(int,df.newId[1])))
-    print(num_classes)
-
+    # df = pd.read_csv('../dataset/label.csv')
+    # num_classes = max(list(map(int,df.newId[1])))
+    # print(num_classes)
+    num_classes = 5005
     os.environ["CUDA_VISIBLE_DEVICES"] = "0"
 
     #device_ids = [0, 1, 2, 3]
