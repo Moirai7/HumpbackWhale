@@ -111,10 +111,8 @@ class Evaluator(object):
 
     def evaluate(self, query_loader, gallery_loader, query, gallery):
         print('extracting query features\n')
-        query_features, query_label = extract_features(self.model, query_loader)
+        query_features, _ = extract_features(self.model, query_loader)
         print('extracting gallery features\n')
-        gallery_features, gallery_label = extract_features(self.model, gallery_loader)
-
-        sio.savemat("result_query_gallery_feat_label.mat",{"query_f":query_features.values,"query_l":query_label.values,"gallery_f":gallery_features.values,"gallery_l":gallery_label.values})
+        gallery_features, _ = extract_features(self.model, gallery_loader)
         distmat = pairwise_distance(query_features, gallery_features, query, gallery)
-        #return evaluate_all(distmat, query=query, gallery=gallery)
+        return evaluate_all(distmat, query=query, gallery=gallery)

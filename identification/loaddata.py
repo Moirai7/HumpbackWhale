@@ -160,7 +160,7 @@ def  main(args):
     print('Test with best model:')
     checkpoint = load_checkpoint(osp.join(args.logs_dir, 'checkpoint.pth.tar'))
     model.module.load_state_dict(checkpoint['state_dict'])
-    evaluator.evaluate(query_loader, gallery_loader, dataset.query, dataset.gallery)
+    evaluator.evaluate(test_loader, train_loader, dataset.query, dataset.gallery)
 
 
 if __name__ == '__main__':
