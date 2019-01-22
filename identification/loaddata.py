@@ -22,12 +22,14 @@ from .reid.utils.serialization import load_checkpoint, save_checkpoint
 
 
 #os.environ["CUDA_VISIBLE_DEVICES"] = "0"
-def get_data(train_filepath, csv_path, test_filepath, height, width, batch_size, workers):
+def get_data(dataset_dir, height, width, batch_size, workers):
 
+    train_filepath = osp.join(dataset_dir,'train/')
+    csv_path = osp.join(dataset_dir,'train.csv')
+    test_filepath = osp.join(dataset_dir,'test/')
 
     normalizer = T.Normalize(mean=[0.485, 0.456, 0.406],
                              std=[0.229, 0.224, 0.225])
-
 
     train_transformer = T.Compose([
         T.RectScale(height, width),
@@ -46,14 +48,14 @@ def get_data(train_filepath, csv_path, test_filepath, height, width, batch_size,
         batch_size=batch_size, num_workers=workers,
         shuffle=True, pin_memory=True, drop_last=True)
 
-    test_loader = DataLoader(
-        HW_Dataset(test_filepath, transform=test_transformer),
-        batch_size=batch_size, num_workers=workers,
-        shuffle=False, pin_memory=True)
+    # test_loader = DataLoader(
+    #     HW_Dataset(test_filepath, transform=test_transformer),
+    #     batch_size=batch_size, num_workers=workers,
+    #     shuffle=False, pin_memory=True)
 
 
 
-    return train_loader, test_loader
+    return train_loader#, test_loader
 
 
 def  main(args):
@@ -73,10 +75,10 @@ def  main(args):
         args.height, args.width = (256, 256)
 
     num_classes = 5005#get by df['Id'].nunique()
-    train_loader, test_loader = \
-        get_data(args.dataset,  args.data_dir, args.height,
+    train_loader = \
+        get_data(args.data_dir, args.height,
                  args.width, args.batch_size, args.workers,
-                 )
+                 )   #, test_loader
 
 
     # Create model
