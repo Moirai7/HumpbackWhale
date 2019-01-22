@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dcb3f7f7-dbf6-4b30-948c-8d1a3c1f582c" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/identification/reid/trainers_partloss.py" afterPath="$PROJECT_DIR$/identification/reid/trainers_partloss.py" />
+      <change beforePath="$PROJECT_DIR$/identification/train_PCB.sh" afterPath="$PROJECT_DIR$/identification/train_PCB.sh" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -16,8 +16,8 @@
       <file leaf-file-name="loaddata.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/identification/loaddata.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="454">
-              <caret line="64" column="9" lean-forward="false" selection-start-line="64" selection-start-column="9" selection-end-line="64" selection-end-column="9" />
+            <state relative-caret-position="261">
+              <caret line="170" column="41" lean-forward="false" selection-start-line="170" selection-start-column="41" selection-end-line="170" selection-end-column="41" />
               <folding>
                 <element signature="e#0#54#0" expanded="true" />
               </folding>
@@ -25,11 +25,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="trainers_partloss.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="trainers_partloss.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/identification/reid/trainers_partloss.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="319">
-              <caret line="92" column="0" lean-forward="true" selection-start-line="92" selection-start-column="0" selection-end-line="92" selection-end-column="0" />
+            <state relative-caret-position="296">
+              <caret line="46" column="29" lean-forward="true" selection-start-line="46" selection-start-column="29" selection-end-line="46" selection-end-column="29" />
               <folding>
                 <element signature="e#0#54#0" expanded="true" />
               </folding>
@@ -59,11 +59,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="train_PCB.sh" pinned="false" current-in-tab="false">
+      <file leaf-file-name="train_PCB.sh" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/identification/train_PCB.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="46">
-              <caret line="2" column="0" lean-forward="true" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+            <state relative-caret-position="0">
+              <caret line="0" column="69" lean-forward="false" selection-start-line="0" selection-start-column="69" selection-end-line="0" selection-end-column="69" />
               <folding />
             </state>
           </provider>
@@ -144,6 +144,7 @@
       <find>HW_Dataset</find>
       <find>num_classes</find>
       <find>print</find>
+      <find>size</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -153,11 +154,11 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/identification/reid/datasets/HumpbackWhale.py" />
-        <option value="$PROJECT_DIR$/identification/train_PCB.sh" />
         <option value="$PROJECT_DIR$/identification/reid/utils/data/preprocessor.py" />
         <option value="$PROJECT_DIR$/identification/loaddata.py" />
         <option value="$PROJECT_DIR$/identification/reid/models/resnet.py" />
         <option value="$PROJECT_DIR$/identification/reid/trainers_partloss.py" />
+        <option value="$PROJECT_DIR$/identification/train_PCB.sh" />
       </list>
     </option>
   </component>
@@ -354,14 +355,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/identification/train_PCB.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="46">
-          <caret line="2" column="0" lean-forward="true" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/identification/reid/utils/data/preprocessor.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="483">
@@ -374,16 +367,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="253">
           <caret line="35" column="0" lean-forward="true" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#54#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/identification/loaddata.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="454">
-          <caret line="64" column="9" lean-forward="false" selection-start-line="64" selection-start-column="9" selection-end-line="64" selection-end-column="9" />
           <folding>
             <element signature="e#0#54#0" expanded="true" />
           </folding>
@@ -408,11 +391,29 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/identification/reid/trainers_partloss.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="319">
-          <caret line="92" column="0" lean-forward="true" selection-start-line="92" selection-start-column="0" selection-end-line="92" selection-end-column="0" />
+        <state relative-caret-position="296">
+          <caret line="46" column="29" lean-forward="true" selection-start-line="46" selection-start-column="29" selection-end-line="46" selection-end-column="29" />
           <folding>
             <element signature="e#0#54#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/identification/loaddata.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="261">
+          <caret line="170" column="41" lean-forward="false" selection-start-line="170" selection-start-column="41" selection-end-line="170" selection-end-column="41" />
+          <folding>
+            <element signature="e#0#54#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/identification/train_PCB.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="69" lean-forward="false" selection-start-line="0" selection-start-column="69" selection-end-line="0" selection-end-column="69" />
+          <folding />
         </state>
       </provider>
     </entry>
