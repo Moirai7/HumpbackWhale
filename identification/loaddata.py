@@ -25,8 +25,9 @@ from reid.utils.serialization import load_checkpoint, save_checkpoint
 def get_data(dataset_dir, height, width, batch_size, workers):
 
     train_filepath = osp.join(dataset_dir,'train/')
-    csv_path = osp.join(dataset_dir,'label.csv')
+    train_csv_path = osp.join(dataset_dir,'label.csv')
     test_filepath = osp.join(dataset_dir,'test/')
+    test_csv_path = osp.join(dataset_dir,'test.csv')
 
     normalizer = T.Normalize(mean=[0.485, 0.456, 0.406],
                              std=[0.229, 0.224, 0.225])
@@ -44,18 +45,22 @@ def get_data(dataset_dir, height, width, batch_size, workers):
         normalizer,
     ])
     train_loader = DataLoader(
-        HW_Dataset(train_filepath, csv_path, transform=train_transformer),
+        HW_Dataset(train_filepath, train_csv_path, transform=train_transformer),
         batch_size=batch_size, num_workers=workers,
         shuffle=True, pin_memory=True, drop_last=True)
 
-    # test_loader = DataLoader(
-    #     HW_Dataset(test_filepath, transform=test_transformer),
+    test_loader = DataLoader(
+        HW_Dataset(test_filepath, test_csv_path, transform=test_transformer),
+        batch_size=batch_size, num_workers=workers,
+        shuffle=False, pin_memory=True)
+    #
+    # gallery_loader = DataLoader(
+    #     HW_Dataset(test_filepath, csv_path, transform=test_transformer),
     #     batch_size=batch_size, num_workers=workers,
     #     shuffle=False, pin_memory=True)
 
 
-
-    return train_loader#, test_loader
+    return train_loader, test_loader#, gallery_loader
 
 
 def  main(args):
@@ -80,7 +85,7 @@ def  main(args):
         args.height, args.width = (256, 256)
 
     #num_classes = 5005#get by df['Id'].nunique()
-    train_loader = \
+    train_loader, test_loader = \
         get_data(args.data_dir, args.height,
                  args.width, args.batch_size, args.workers,
                  )   #, test_loader
@@ -160,7 +165,9 @@ def  main(args):
     print('Test with best model:')
     checkpoint = load_checkpoint(osp.join(args.logs_dir, 'checkpoint.pth.tar'))
     model.module.load_state_dict(checkpoint['state_dict'])
-    evaluator.evaluate(test_loader, train_loader, dataset.query, dataset.gallery)
+    query = pd.read_csv('../dataset/test.csv')
+    gallery = pd.read_csv('../dataset/label.csv')
+    evaluator.evaluate(test_loader, train_loader, query, gallery)
 
 
 if __name__ == '__main__':
