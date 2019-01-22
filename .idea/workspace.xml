@@ -28,11 +28,21 @@
       <file leaf-file-name="trainers_partloss.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/identification/reid/trainers_partloss.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="480">
+            <state relative-caret-position="342">
               <caret line="92" column="26" lean-forward="true" selection-start-line="92" selection-start-column="26" selection-end-line="92" selection-end-column="26" />
               <folding>
                 <element signature="e#0#54#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="classification.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/identification/reid/evaluation_metrics/classification.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="69">
+              <caret line="5" column="4" lean-forward="false" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="4" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -91,16 +101,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="dataloader.py" pinned="false" current-in-tab="false">
-        <entry file="file://C:/ProgramData/Miniconda3/Lib/site-packages/torch/utils/data/dataloader.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-137">
-              <caret line="449" column="8" lean-forward="false" selection-start-line="449" selection-start-column="8" selection-end-line="449" selection-end-column="8" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="preprocessor.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/identification/reid/utils/data/preprocessor.py">
           <provider selected="true" editor-type-id="text-editor">
@@ -137,11 +137,11 @@
       <find>inputs</find>
       <find>256</find>
       <find>train</find>
-      <find>_parse_data</find>
       <find>csv</find>
       <find>HW_Dataset</find>
       <find>df</find>
       <find>pd</find>
+      <find>_parse_data</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -211,6 +211,13 @@
               <item name="identification" type="462c0819:PsiDirectoryNode" />
               <item name="reid" type="462c0819:PsiDirectoryNode" />
               <item name="datasets" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="HumpbackWhale" type="b2602c69:ProjectViewProjectNode" />
+              <item name="HumpbackWhale" type="462c0819:PsiDirectoryNode" />
+              <item name="identification" type="462c0819:PsiDirectoryNode" />
+              <item name="reid" type="462c0819:PsiDirectoryNode" />
+              <item name="evaluation_metrics" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="HumpbackWhale" type="b2602c69:ProjectViewProjectNode" />
@@ -389,9 +396,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/identification/reid/evaluation_metrics/classification.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="69">
+          <caret line="5" column="4" lean-forward="false" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/identification/reid/trainers_partloss.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
+        <state relative-caret-position="342">
           <caret line="92" column="26" lean-forward="true" selection-start-line="92" selection-start-column="26" selection-end-line="92" selection-end-column="26" />
           <folding>
             <element signature="e#0#54#0" expanded="true" />

@@ -100,4 +100,4 @@ class Trainer(BaseTrainer):
             loss, prec = self.criterion(outputs, targets)
         else:
             raise ValueError("Unsupported loss:", self.criterion)
-        return loss0, loss1 #, loss2, loss3, prec # loss4, loss5, loss6, loss7
+        return loss0, loss1,prec #, loss2, loss3, prec # loss4, loss5, loss6, loss7
