@@ -100,8 +100,8 @@ def  main(args):
               .format(start_epoch, best_top1))
 
     #model = nn.DataParallel(model)
-    #model = nn.DataParallel(model).cuda()
-    model = model.cuda()
+    model = nn.DataParallel(model).cuda()
+    #model = model.cuda()
 
 
     # Evaluator
