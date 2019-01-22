@@ -1,6 +1,6 @@
 from __future__ import print_function, absolute_import
 import time
-
+from sklearn.preprocessing import StandardScaler, OneHotEncoder, LabelEncoder
 import torch
 from torch.autograd import Variable
 
@@ -28,16 +28,16 @@ class BaseTrainer(object):
         bar = Bar('Processing', max=len(data_loader))
         for i, inputs in enumerate(data_loader):
             data_time.update(time.time() - end)
-
+            #print(inputs)
             inputs, targets = self._parse_data(inputs)
-            loss0, loss1, loss2, loss3, prec1 = self._forward(inputs, targets)#, loss4, loss5, loss6, loss7
+            loss0, loss1 , prec1 = self._forward(inputs, targets)# , loss2, loss3,, loss4, loss5, loss6, loss7
 #===================================================================================
-            loss = (loss0+loss1+loss2+loss3)/4#+loss4+loss5+loss6+loss7
+            loss = (loss0+loss1)/2#+loss2+loss3+loss4+loss5+loss6+loss7
             losses.update(loss.data[0], targets.size(0))
             precisions.update(prec1, targets.size(0))
 
-            optimizer.zero_grad()#loss4, loss5, loss6, loss7     ,torch.tensor(1.0).cuda(),torch.tensor(1.0).cuda(),torch.tensor(1.0).cuda(),torch.tensor(1.0).cuda(),torch.tensor(1.0).cuda()
-            torch.autograd.backward([ loss0, loss1, loss2, loss3, ],[torch.tensor(1.0).cuda(), torch.tensor(1.0).cuda(), torch.tensor(1.0).cuda(),torch.tensor(1.0).cuda()])
+            optimizer.zero_grad()#, loss2, loss3,loss4, loss5, loss6, loss7     , torch.tensor(1.0).cuda(),torch.tensor(1.0).cuda(),torch.tensor(1.0).cuda(),torch.tensor(1.0).cuda(),torch.tensor(1.0).cuda(),torch.tensor(1.0).cuda(),torch.tensor(1.0).cuda()
+            torch.autograd.backward([ loss0, loss1 ],[torch.tensor(1.0).cuda(), torch.tensor(1.0).cuda()])
             optimizer.step()
             #print('Epoch: [{N_epoch}][{N_batch}/{N_size}] | Loss0 {N_loss0:.3f} |Loss1 {N_loss1:.3f}  |Loss2 {N_loss2:.3f} | Loss3 {N_loss3:.3f} |Loss4 {N_loss:.3f} |Loss5 {N_loss:.3f} | Loss {N_loss:.3f} {N_lossa:.3f} |||Prec {N_prec:.2f} {N_preca:.2f}'.format(
              #         N_epoch=epoch, N_batch=i + 1, N_size=len(data_loader),N_loss0=loss0,N_loss1=loss1, N_loss2=loss2,N_loss3=loss3,N_loss4=loss4,N_loss5=loss5,
@@ -65,12 +65,16 @@ class BaseTrainer(object):
         raise NotImplementedError
 
 
+
 class Trainer(BaseTrainer):
+
     def _parse_data(self, inputs):
-        imgs,  pids = inputs
+        imgs, pids = inputs
         inputs = [Variable(imgs)]
         #targets = Variable(pids)
-        targets = Variable(torch.FloatTensor(list(map(int, pids))).cuda())
+        print(pids)
+
+        targets = Variable(torch.FloatTensor(pids).cuda())
         return inputs, targets
 
     def _forward(self, inputs, targets):
@@ -80,8 +84,8 @@ class Trainer(BaseTrainer):
         if isinstance(self.criterion, torch.nn.CrossEntropyLoss):
             loss0 = self.criterion(outputs[1][0],targets)
             loss1 = self.criterion(outputs[1][1],targets)
-            loss2 = self.criterion(outputs[1][2],targets)
-            loss3 = self.criterion(outputs[1][3],targets)
+            # loss2 = self.criterion(outputs[1][2],targets)
+            # loss3 = self.criterion(outputs[1][3],targets)
             # loss4 = self.criterion(outputs[1][4],targets)
             # loss5 = self.criterion(outputs[1][5],targets)
             # loss6 = self.criterion(outputs[1][6], targets)
@@ -97,4 +101,4 @@ class Trainer(BaseTrainer):
             loss, prec = self.criterion(outputs, targets)
         else:
             raise ValueError("Unsupported loss:", self.criterion)
-        return loss0, loss1, loss2, loss3, prec # loss4, loss5, loss6, loss7
+        return loss0, loss1 #, loss2, loss3, prec # loss4, loss5, loss6, loss7
