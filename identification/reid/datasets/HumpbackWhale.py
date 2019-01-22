@@ -37,7 +37,7 @@ class HW_Dataset(object):
 
         img_path = os.path.join(self.file_path, self.df.Image[idx])
         label = self.df.Id[idx]
-        new_label = self.df.NewId[idx]
+        new_label = self.df.newId[idx]
 
         # img = cv2.imread(img_path)
         # img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
