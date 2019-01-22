@@ -89,7 +89,7 @@ class Trainer(BaseTrainer):
             # loss5 = self.criterion(outputs[1][5],targets)
             # loss6 = self.criterion(outputs[1][6], targets)
             # loss7 = self.criterion(outputs[1][7], targets)
-            prec, = accuracy(outputs[1][2].data, targets.data)
+            prec, = accuracy(outputs[1][1].data, targets.data)
             prec = prec[0]
                         
         elif isinstance(self.criterion, OIMLoss):
