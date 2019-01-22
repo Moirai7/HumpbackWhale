@@ -140,7 +140,7 @@ class ResNet(nn.Module):
             y = F.avg_pool3d(x,(16,1,1)).squeeze(1)
             sx = x.size(3)/2
             kx = x.size(3)-sx
-            x = F.avg_pool2d(x,kernel_size=(x.size(2),kx),stride=(x.size(2),sx))   # H4 W8
+            x = F.avg_pool2d(x,kernel_size=(x.size(2),int(kx)),stride=(x.size(2),int(sx)))   # H4 W8
 #========================================================================#            
 
             out0 = x.view(x.size(0),-1)#这样破坏了x的四维结构的，只变成二维
