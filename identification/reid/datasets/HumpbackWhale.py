@@ -8,6 +8,20 @@ import pandas as pd
 from PIL import Image
 import os
 
+class LabelOneHotEncoder():
+    def __init__(self):
+        self.ohe = OneHotEncoder()
+        self.le = LabelEncoder()
+    def fit_transform(self, x):
+        features = self.le.fit_transform( x)
+        return self.ohe.fit_transform( features.reshape(-1,1))
+    def transform( self, x):
+        return self.ohe.transform( self.la.transform( x.reshape(-1,1)))
+    def inverse_tranform( self, x):
+        return self.le.inverse_transform( self.ohe.inverse_tranform( x))
+    def inverse_labels( self, x):
+        return self.le.inverse_transform( x)
+
 class HW_Dataset(object):
     def __init__(self, filepath, csv_path, transform=None):
         self.file_path = filepath
@@ -27,10 +41,15 @@ class HW_Dataset(object):
 
         # img = cv2.imread(img_path)
         # img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
-        img = Image.open(img_path).convert('RGB')
-        img = self.transform(img)
+        imgs = Image.open(img_path)
+        y = list(map(ImageToLabelDict.get, imgs))
+        lohe = LabelOneHotEncoder()
+        y_cat = lohe.fit_transform(y)
+        print("num_calss:", len(y_cat.toarray()[0]))
+        imgs = imgs.convert('RGB')
+        imgs = self.transform(imgs)
 
-        return (img, label, ImageToLabelDict)
+        return imgs, y_cat
 
 
 

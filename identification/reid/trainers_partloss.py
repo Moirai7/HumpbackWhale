@@ -28,7 +28,7 @@ class BaseTrainer(object):
         bar = Bar('Processing', max=len(data_loader))
         for i, inputs in enumerate(data_loader):
             data_time.update(time.time() - end)
-            print(inputs)
+            #print(inputs)
             inputs, targets = self._parse_data(inputs)
             loss0, loss1 , prec1 = self._forward(inputs, targets)# , loss2, loss3,, loss4, loss5, loss6, loss7
 #===================================================================================
@@ -64,32 +64,17 @@ class BaseTrainer(object):
     def _forward(self, inputs, targets):
         raise NotImplementedError
 
-class LabelOneHotEncoder():
-    def __init__(self):
-        self.ohe = OneHotEncoder()
-        self.le = LabelEncoder()
-    def fit_transform(self, x):
-        features = self.le.fit_transform( x)
-        return self.ohe.fit_transform( features.reshape(-1,1))
-    def transform( self, x):
-        return self.ohe.transform( self.la.transform( x.reshape(-1,1)))
-    def inverse_tranform( self, x):
-        return self.le.inverse_transform( self.ohe.inverse_tranform( x))
-    def inverse_labels( self, x):
-        return self.le.inverse_transform( x)
+
 
 class Trainer(BaseTrainer):
 
     def _parse_data(self, inputs):
-        imgs, pids, ImageToLabelDict = inputs
+        imgs, pids = inputs
         inputs = [Variable(imgs)]
         #targets = Variable(pids)
 
-        y = list(map(ImageToLabelDict.get, imgs))
-        lohe = LabelOneHotEncoder()
-        y_cat = lohe.fit_transform(y)
-        print("num_calss:",len(y_cat.toarray()[0]))
-        targets = Variable(torch.FloatTensor(y_cat).cuda())
+
+        targets = Variable(torch.FloatTensor(pids).cuda())
         return inputs, targets
 
     def _forward(self, inputs, targets):
