@@ -59,8 +59,8 @@ def get_data(dataset_dir, height, width, batch_size, workers):
 
 
 def  main(args):
-    df = pd.read_csv('../dataset/label.csv')
-    print(df.newId)
+    # df = pd.read_csv('../dataset/label.csv')
+    # print(df.newId)
     os.environ["CUDA_VISIBLE_DEVICES"] = "0"
 
     #device_ids = [0, 1, 2, 3]

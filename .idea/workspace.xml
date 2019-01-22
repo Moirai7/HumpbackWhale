@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="dcb3f7f7-dbf6-4b30-948c-8d1a3c1f582c" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/identification/loaddata.py" afterPath="$PROJECT_DIR$/identification/loaddata.py" />
+      <change beforePath="$PROJECT_DIR$/identification/reid/utils/data/preprocessor.py" afterPath="$PROJECT_DIR$/identification/reid/utils/data/preprocessor.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -13,11 +14,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="loaddata.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="loaddata.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/identification/loaddata.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="145">
-              <caret line="62" column="19" lean-forward="true" selection-start-line="62" selection-start-column="19" selection-end-line="62" selection-end-column="19" />
+            <state relative-caret-position="251">
+              <caret line="18" column="51" lean-forward="false" selection-start-line="18" selection-start-column="41" selection-end-line="18" selection-end-column="51" />
               <folding>
                 <element signature="e#0#54#0" expanded="true" />
               </folding>
@@ -40,8 +41,8 @@
       <file leaf-file-name="HumpbackWhale.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/identification/reid/datasets/HumpbackWhale.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="363">
-              <caret line="39" column="29" lean-forward="true" selection-start-line="39" selection-start-column="29" selection-end-line="39" selection-end-column="29" />
+            <state relative-caret-position="18">
+              <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="48" selection-end-column="30" />
               <folding>
                 <element signature="e#0#54#0" expanded="true" />
               </folding>
@@ -101,11 +102,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="preprocessor.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="preprocessor.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/identification/reid/utils/data/preprocessor.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="92">
-              <caret line="8" column="42" lean-forward="false" selection-start-line="8" selection-start-column="42" selection-end-line="8" selection-end-column="42" />
+            <state relative-caret-position="391">
+              <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -130,7 +131,6 @@
       <find>dataset</find>
       <find>data_dir</find>
       <find>join</find>
-      <find>df</find>
       <find>arch</find>
       <find>evaluate</find>
       <find>module</find>
@@ -138,8 +138,10 @@
       <find>inputs</find>
       <find>256</find>
       <find>train</find>
-      <find>csv</find>
       <find>_parse_data</find>
+      <find>csv</find>
+      <find>HW_Dataset</find>
+      <find>df</find>
       <find>pd</find>
     </findStrings>
   </component>
@@ -154,6 +156,7 @@
         <option value="$PROJECT_DIR$/identification/reid/datasets/HumpbackWhale.py" />
         <option value="$PROJECT_DIR$/identification/train_PCB.sh" />
         <option value="$PROJECT_DIR$/identification/loaddata.py" />
+        <option value="$PROJECT_DIR$/identification/reid/utils/data/preprocessor.py" />
       </list>
     </option>
   </component>
@@ -216,6 +219,21 @@
               <item name="identification" type="462c0819:PsiDirectoryNode" />
               <item name="reid" type="462c0819:PsiDirectoryNode" />
               <item name="models" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="HumpbackWhale" type="b2602c69:ProjectViewProjectNode" />
+              <item name="HumpbackWhale" type="462c0819:PsiDirectoryNode" />
+              <item name="identification" type="462c0819:PsiDirectoryNode" />
+              <item name="reid" type="462c0819:PsiDirectoryNode" />
+              <item name="utils" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="HumpbackWhale" type="b2602c69:ProjectViewProjectNode" />
+              <item name="HumpbackWhale" type="462c0819:PsiDirectoryNode" />
+              <item name="identification" type="462c0819:PsiDirectoryNode" />
+              <item name="reid" type="462c0819:PsiDirectoryNode" />
+              <item name="utils" type="462c0819:PsiDirectoryNode" />
+              <item name="data" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -294,14 +312,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/identification/reid/utils/data/preprocessor.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="8" column="42" lean-forward="false" selection-start-line="8" selection-start-column="42" selection-end-line="8" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://C:/ProgramData/Miniconda3/Lib/site-packages/torch/utils/data/dataloader.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-137">
@@ -362,23 +372,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/identification/reid/datasets/HumpbackWhale.py">
+    <entry file="file://$PROJECT_DIR$/identification/loaddata.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="363">
-          <caret line="39" column="29" lean-forward="true" selection-start-line="39" selection-start-column="29" selection-end-line="39" selection-end-column="29" />
+        <state relative-caret-position="251">
+          <caret line="18" column="51" lean-forward="false" selection-start-line="18" selection-start-column="41" selection-end-line="18" selection-end-column="51" />
           <folding>
             <element signature="e#0#54#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/identification/loaddata.py">
+    <entry file="file://$PROJECT_DIR$/identification/reid/datasets/HumpbackWhale.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="145">
-          <caret line="62" column="19" lean-forward="true" selection-start-line="62" selection-start-column="19" selection-end-line="62" selection-end-column="19" />
+        <state relative-caret-position="18">
+          <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="48" selection-end-column="30" />
           <folding>
             <element signature="e#0#54#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/identification/reid/utils/data/preprocessor.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

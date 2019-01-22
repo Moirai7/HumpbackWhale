@@ -5,11 +5,9 @@ import os
 from PIL import Image
 
 class HW_Dataset(object):
-    def __init__(self, filepath, csv_path=None, transform=None):
-        super(HW_Dataset, self).__init__()
+    def __init__(self, filepath, csv_path, transform=None):
         self.file_path = filepath
-        if csv_path is not None:
-            self.df = pd.read_csv(csv_path)
+        self.df = pd.read_csv(csv_path)
         self.transform = transform
         self.image_list = [x for x in os.listdir(self.file_path)]
 
@@ -17,15 +15,19 @@ class HW_Dataset(object):
         return (len(self.image_list))
 
     def __getitem__(self, idx):
+
         img_path = os.path.join(self.file_path, self.df.Image[idx])
         label = self.df.Id[idx]
+        new_label = self.df.newId[idx]
+
         # img = cv2.imread(img_path)
         # img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
-        img = Image.open(img_path).convert('RGB')
-        if self.transform is not None:
-            img = self.transform(img)
+        imgs = Image.open(img_path)
 
-        return img, label
+        imgs = imgs.convert('RGB')
+        imgs = self.transform(imgs)
+
+        return imgs, new_label
 
 class Preprocessor(object):
     def __init__(self, dataset, root=None, transform=None):
