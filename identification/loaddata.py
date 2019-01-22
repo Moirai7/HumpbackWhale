@@ -25,7 +25,7 @@ from reid.utils.serialization import load_checkpoint, save_checkpoint
 def get_data(dataset_dir, height, width, batch_size, workers):
 
     train_filepath = osp.join(dataset_dir,'train/')
-    csv_path = osp.join(dataset_dir,'train.csv')
+    csv_path = osp.join(dataset_dir,'label.csv')
     test_filepath = osp.join(dataset_dir,'test/')
 
     normalizer = T.Normalize(mean=[0.485, 0.456, 0.406],
