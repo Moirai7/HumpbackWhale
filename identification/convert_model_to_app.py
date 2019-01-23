@@ -19,9 +19,10 @@ from reid.utils.serialization import load_checkpoint, save_checkpoint
 # Create model
 model = models.create('resnet50', num_features=256, dropout=0.5, num_classes=5005, cut_at_pooling=False, FCN=True)
 model = nn.DataParallel(model).cuda()
-dummy_input = Variable(torch.randn(32, 3, 256, 256))
+dummy_input = Variable(torch.randn(32, 3, 256, 256)).cuda()
 
 osp.join('logs/humpbackWhale/', 'checkpoint.pth.tar')
+
 
 checkpoint = load_checkpoint(osp.join('logs/humpbackWhale/', 'checkpoint.pth.tar'))
 model.module.load_state_dict(checkpoint['state_dict'])
