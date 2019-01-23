@@ -19,6 +19,7 @@ class HW_Dataset(object):
         return self._get_single_item(indices)
 
     def _get_single_item(self, idx):
+        print(idx,self.__len__())
         img_name = self.df.Image[idx]
         img_path = os.path.join(self.file_path, self.df.Image[idx])
         label = self.df.Id[idx]
