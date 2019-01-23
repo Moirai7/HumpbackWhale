@@ -97,9 +97,9 @@ class Evaluator(object):
 
     def evaluate(self, query_loader, gallery_loader, query, gallery):
         print('extracting query features\n')
-        query_features, _ = extract_features(self.model, query_loader)
+        query_features, query_label = extract_features(self.model, query_loader)
         print('extracting gallery features\n')
-        gallery_features, _ = extract_features(self.model, gallery_loader)
+        gallery_features, gallery_label = extract_features(self.model, gallery_loader)
         distmat = pairwise_distance(query_features, gallery_features, query, gallery)
         label = find_top5_label(distmat, gallery=gallery)
         dataframe = pd.DataFrame({'Image': query.Image, 'Id': label})
