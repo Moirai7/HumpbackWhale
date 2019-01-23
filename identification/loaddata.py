@@ -151,15 +151,15 @@ def  main(args):
             g['lr'] = lr * g.get('lr_mult', 1)#if lr_mult do not find,return defualt value 1
 
     # Start training
-    for epoch in range(start_epoch, args.epochs):
-        adjust_lr(epoch)
-        trainer.train(epoch, train_loader, optimizer)
-        is_best = True
-        save_checkpoint({
-            'state_dict': model.module.state_dict(),
-            'epoch': epoch + 1,
-            'best_top1': best_top1,
-        }, is_best, fpath=osp.join(args.logs_dir, 'checkpoint.pth.tar'))
+    # for epoch in range(start_epoch, args.epochs):
+    #     adjust_lr(epoch)
+    #     trainer.train(epoch, train_loader, optimizer)
+    #     is_best = True
+    #     save_checkpoint({
+    #         'state_dict': model.module.state_dict(),
+    #         'epoch': epoch + 1,
+    #         'best_top1': best_top1,
+    #     }, is_best, fpath=osp.join(args.logs_dir, 'checkpoint.pth.tar'))
 
     # Final test
     print('Test with best model:')
@@ -190,7 +190,7 @@ if __name__ == '__main__':
     # model
     parser.add_argument('-a', '--arch', type=str, default='resnet50',
                         choices=models.names())
-    parser.add_argument('--features', type=int, default=128)
+    parser.add_argument('--ures', type=int, default=128)
     parser.add_argument('--dropout', type=float, default=0.5)
     # optimizer
     parser.add_argument('--lr', type=float, default=0.1,
