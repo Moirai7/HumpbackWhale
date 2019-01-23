@@ -11,10 +11,10 @@ from torch.backends import cudnn
 from torch.utils.data import DataLoader
 import pandas as pd
 
-from reid import datasets
-from reid import models
-from reid.trainers_partloss import Trainer
-from reid.evaluators import Evaluator
+from .reid import datasets
+from .reid import models
+from .reid.trainers_partloss import Trainer
+from .reid.evaluators import Evaluator
 from reid.utils.data import transforms as T
 from reid.utils.data.preprocessor import HW_Dataset,HW_Test_Dataset
 from reid.utils.logging import Logger
@@ -94,7 +94,7 @@ def  main(args):
     # Create model
     model = models.create(args.arch, num_features=args.features,
                           dropout=args.dropout, num_classes=num_classes,cut_at_pooling=False, FCN=True)
-
+    torch.save(model, 'model.pth')
     # Load from checkpoint
     start_epoch = best_top1 = 0
     if args.resume:
@@ -110,8 +110,8 @@ def  main(args):
               .format(start_epoch, best_top1))
 
     #model = nn.DataParallel(model)
-    model = nn.DataParallel(model).cuda()
-    #model = model.cuda()
+    #model = nn.DataParallel(model).cuda()
+    model = model.cuda()
 
 
     # Evaluator
@@ -151,15 +151,15 @@ def  main(args):
             g['lr'] = lr * g.get('lr_mult', 1)#if lr_mult do not find,return defualt value 1
 
     # Start training
-    # for epoch in range(start_epoch, args.epochs):
-    #     adjust_lr(epoch)
-    #     trainer.train(epoch, train_loader, optimizer)
-    #     is_best = True
-    #     save_checkpoint({
-    #         'state_dict': model.module.state_dict(),
-    #         'epoch': epoch + 1,
-    #         'best_top1': best_top1,
-    #     }, is_best, fpath=osp.join(args.logs_dir, 'checkpoint.pth.tar'))
+    for epoch in range(start_epoch, args.epochs):
+        adjust_lr(epoch)
+        trainer.train(epoch, train_loader, optimizer)
+        is_best = True
+        save_checkpoint({
+            'state_dict': model.module.state_dict(),
+            'epoch': epoch + 1,
+            'best_top1': best_top1,
+        }, is_best, fpath=osp.join(args.logs_dir, 'checkpoint.pth.tar'))
 
     # Final test
     print('Test with best model:')
