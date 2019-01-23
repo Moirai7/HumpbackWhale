@@ -28,7 +28,7 @@ def extract_features(model, data_loader, print_freq=10,is_train=True):
         for idx, output, pid in zip(index, outputs, img_labels):
             features[idx] = output
             labels[idx] = pid
-            print(idx)
+            #print(idx)
 
         batch_time.update(time.time() - end)
         end = time.time()
@@ -59,10 +59,11 @@ def pairwise_distance(query_features, gallery_features, query=None, gallery=None
     #print(query.Id[3])
     #print(torch.Tensor(1).int().value())
     print(torch.tensor(1))
+    print(query_features[0:5])
     print(query_features[torch.tensor(1)])
     print(query_features[query.Id[3]])
-    x = torch.cat([query_features[f].unsqueeze(0) for f in torch.LongTensor(np.arange(len(query)))], 0)
-    y = torch.cat([gallery_features[f].unsqueeze(0) for f in torch.LongTensor(np.arange(len(query)))], 0)
+    x = torch.cat([query_features[f].unsqueeze(0) for f in torch.tensor(np.arange(len(query)))], 0)
+    y = torch.cat([gallery_features[f].unsqueeze(0) for f in torch.tensor(np.arange(len(query)))], 0)
     m, n = x.size(0), y.size(0)
     x = x.view(m, -1)
     y = y.view(n, -1)
