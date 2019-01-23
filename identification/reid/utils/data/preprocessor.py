@@ -11,7 +11,7 @@ class HW_Dataset(object):
         self.transform = transform
 
     def __len__(self):
-        return (len(self.csv))
+        return (len(self.df))
 
     def __getitem__(self, indices):
         if isinstance(indices, (tuple, list)):
@@ -40,7 +40,7 @@ class HW_Test_Dataset(object):
         self.transform = transform
 
     def __len__(self):
-        return (len(self.csv))
+        return (len(self.df))
 
     def __getitem__(self, indices):
         if isinstance(indices, (tuple, list)):
