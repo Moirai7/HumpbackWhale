@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dcb3f7f7-dbf6-4b30-948c-8d1a3c1f582c" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/identification/loaddata.py" afterPath="$PROJECT_DIR$/identification/loaddata.py" />
       <change beforePath="$PROJECT_DIR$/identification/reid/evaluators.py" afterPath="$PROJECT_DIR$/identification/reid/evaluators.py" />
-      <change beforePath="$PROJECT_DIR$/identification/reid/utils/data/preprocessor.py" afterPath="$PROJECT_DIR$/identification/reid/utils/data/preprocessor.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -75,8 +73,8 @@
       <file leaf-file-name="evaluators.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/identification/reid/evaluators.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="55" column="38" lean-forward="false" selection-start-line="55" selection-start-column="38" selection-end-line="55" selection-end-column="38" />
+            <state relative-caret-position="300">
+              <caret line="55" column="28" lean-forward="true" selection-start-line="55" selection-start-column="28" selection-end-line="55" selection-end-column="28" />
               <folding>
                 <element signature="e#0#54#0" expanded="true" />
               </folding>
@@ -137,7 +135,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>arch</find>
       <find>evaluate</find>
       <find>module</find>
       <find>Trainer</find>
@@ -167,6 +164,7 @@
       <find>newId</find>
       <find>base</find>
       <find>HW_Test_Dataset</find>
+      <find>OrderedDict</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -813,8 +811,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/identification/reid/evaluators.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="55" column="38" lean-forward="false" selection-start-line="55" selection-start-column="38" selection-end-line="55" selection-end-column="38" />
+        <state relative-caret-position="300">
+          <caret line="55" column="28" lean-forward="true" selection-start-line="55" selection-start-column="28" selection-end-line="55" selection-end-column="28" />
           <folding>
             <element signature="e#0#54#0" expanded="true" />
           </folding>
