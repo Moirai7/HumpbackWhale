@@ -16,7 +16,7 @@ from reid import models
 from reid.trainers_partloss import Trainer
 from reid.evaluators import Evaluator
 from reid.utils.data import transforms as T
-from reid.utils.data.preprocessor import HW_Dataset
+from reid.utils.data.preprocessor import HW_Dataset,HW_Test_Dataset
 from reid.utils.logging import Logger
 from reid.utils.serialization import load_checkpoint, save_checkpoint
 
@@ -50,7 +50,7 @@ def get_data(dataset_dir, height, width, batch_size, workers):
         shuffle=True, pin_memory=True, drop_last=True)
 
     test_loader = DataLoader(
-        HW_Dataset(test_filepath, test_csv_path, transform=test_transformer),
+        HW_Test_Dataset(test_filepath, test_csv_path, transform=test_transformer),
         batch_size=batch_size, num_workers=workers,
         shuffle=False, pin_memory=True)
     #
