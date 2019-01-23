@@ -9,7 +9,7 @@ from .feature_extraction import extract_cnn_feature
 from .utils.meters import AverageMeter
 
 
-def extract_features(model, data_loader, print_freq=10):
+def extract_features(model, data_loader, print_freq=10,is_train=True):
     model.eval()
     batch_time = AverageMeter()
     data_time = AverageMeter()
@@ -18,16 +18,16 @@ def extract_features(model, data_loader, print_freq=10):
     labels = OrderedDict()
 
     end = time.time()
-    for i, (imgs, pids, img_labels,img_name) in enumerate(data_loader):
+    for i, (imgs, pids, img_labels,index) in enumerate(data_loader):
         data_time.update(time.time() - end)
 
         outputs = extract_cnn_feature(model, imgs)
 
         #print(i, len(fnames),len(outputs),len(pids))
-        for fname, output, pid in zip(img_name, outputs, img_labels):
-            features[fname] = output
-            labels[fname] = pid
-            print(fname,features[fname])
+        for idx, output, pid in zip(index, outputs, img_labels):
+            features[idx] = output
+            labels[idx] = pid
+            print(idx)
 
         batch_time.update(time.time() - end)
         end = time.time()
@@ -54,7 +54,7 @@ def pairwise_distance(query_features, gallery_features, query=None, gallery=None
         dist = dist.expand(n, n) - 2 * torch.mm(x, x.t())
         return dist
     print("+++++++++++++++")
-    print(query_features[query.Image[1]])
+    print(query_features[query.Id[1]])
     x = torch.cat([query_features[f].unsqueeze(0) for f in query.Image], 0)
     y = torch.cat([gallery_features[f].unsqueeze(0) for f in gallery.Image], 0)
     m, n = x.size(0), y.size(0)
@@ -97,9 +97,9 @@ class Evaluator(object):
 
     def evaluate(self, query_loader, gallery_loader, query, gallery):
         print('extracting query features\n')
-        query_features, query_label = extract_features(self.model, query_loader)
+        query_features, query_label = extract_features(self.model, query_loader,is_train=True)
         print('extracting gallery features\n')
-        gallery_features, gallery_label = extract_features(self.model, gallery_loader)
+        gallery_features, gallery_label = extract_features(self.model, gallery_loader,is_train=False)
         distmat = pairwise_distance(query_features, gallery_features, query, gallery)
         label = find_top5_label(distmat, gallery=gallery)
         dataframe = pd.DataFrame({'Image': query.Image, 'Id': label})
