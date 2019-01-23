@@ -157,16 +157,16 @@ def  main(args):
         for g in optimizer.param_groups:
             g['lr'] = lr * g.get('lr_mult', 1)#if lr_mult do not find,return defualt value 1
 
-    # Start training
-    # for epoch in range(start_epoch, args.epochs):
-    #     adjust_lr(epoch)
-    #     trainer.train(epoch, train_loader, optimizer)
-    #     is_best = True
-    #     save_checkpoint({
-    #         'state_dict': model.module.state_dict(),
-    #         'epoch': epoch + 1,
-    #         'best_top1': best_top1,
-    #     }, is_best, fpath=osp.join(args.logs_dir, 'checkpoint.pth.tar'))
+    #Start training
+    for epoch in range(start_epoch, args.epochs):
+        adjust_lr(epoch)
+        trainer.train(epoch, train_loader, optimizer)
+        is_best = True
+        save_checkpoint({
+            'state_dict': model.module.state_dict(),
+            'epoch': epoch + 1,
+            'best_top1': best_top1,
+        }, is_best, fpath=osp.join(args.logs_dir, 'checkpoint.pth.tar'))
 
     # Final test
     print('Test with best model:')
@@ -177,7 +177,7 @@ def  main(args):
     query = pd.read_csv('../dataset/test.csv')
     gallery = pd.read_csv('../dataset/label.csv')
     #print(len(query),len(gallery),len(os.listdir("../dataset/train")),len(os.listdir("../dataset/test")))
-    evaluator.evaluate(test_loader,train_loader,  query, gallery)
+    evaluator.evaluate(train_loader, test_loader, query, gallery)
 
 
 if __name__ == '__main__':

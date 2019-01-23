@@ -1,7 +1,107 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="dcb3f7f7-dbf6-4b30-948c-8d1a3c1f582c" name="Default" comment="" />
+    <list default="true" id="dcb3f7f7-dbf6-4b30-948c-8d1a3c1f582c" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitattributes" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/HumpbackWhale.iml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/HumpbackWhale/HumpbackWhale.xcodeproj/project.pbxproj" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/HumpbackWhale/HumpbackWhale.xcodeproj/project.xcworkspace/contents.xcworkspacedata" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/HumpbackWhale/HumpbackWhale.xcodeproj/project.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/HumpbackWhale/HumpbackWhale.xcodeproj/project.xcworkspace/xcuserdata/emma.xcuserdatad/UserInterfaceState.xcuserstate" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/HumpbackWhale/HumpbackWhale.xcodeproj/xcuserdata/emma.xcuserdatad/xcschemes/xcschememanagement.plist" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/HumpbackWhale/HumpbackWhale/AppDelegate.swift" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/HumpbackWhale/HumpbackWhale/Assets.xcassets/AppIcon.appiconset/Contents.json" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/HumpbackWhale/HumpbackWhale/Assets.xcassets/Contents.json" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/HumpbackWhale/HumpbackWhale/Base.lproj/LaunchScreen.storyboard" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/HumpbackWhale/HumpbackWhale/Base.lproj/Main.storyboard" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/HumpbackWhale/HumpbackWhale/Food101.mlmodel" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/HumpbackWhale/HumpbackWhale/Info.plist" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/HumpbackWhale/HumpbackWhale/UIImage+PixelBuffer.swift" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/HumpbackWhale/HumpbackWhale/ViewController.swift" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/HumpbackWhale/HumpbackWhaleTests/HumpbackWhaleTests.swift" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/HumpbackWhale/HumpbackWhaleTests/Info.plist" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/HumpbackWhale/HumpbackWhaleUITests/HumpbackWhaleUITests.swift" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/HumpbackWhale/HumpbackWhaleUITests/Info.plist" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/README.md" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/identification/.gitattributes" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/identification/PCB.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/identification/RPP.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/identification/checkpoint.pth.tar" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/identification/convert_model_to_app.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/identification/label.csv" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/identification/loaddata.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/identification/logs/humpbackWhale/checkpoint.pth.tar" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/identification/logs/humpbackWhale/log.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/identification/logs/humpbackWhale/model_best.pth.tar" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/identification/logs/market-1501/PCB/log.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/identification/model.pth" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/identification/model.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/identification/newtrain.csv" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/identification/nohup.out" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/identification/reid/.evaluators.py.swp" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/identification/reid/__init__.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/identification/reid/datasets/HumpbackWhale.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/identification/reid/datasets/__init__.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/identification/reid/datasets/duke.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/identification/reid/datasets/market.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/identification/reid/evaluation_metrics/__init__.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/identification/reid/evaluation_metrics/classification.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/identification/reid/evaluation_metrics/ranking.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/identification/reid/evaluators.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/identification/reid/feature_extraction/__init__.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/identification/reid/feature_extraction/cnn.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/identification/reid/feature_extraction/database.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/identification/reid/models/.resnet.py.swo" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/identification/reid/models/.resnet_mask.py.swo" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/identification/reid/models/__init__.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/identification/reid/models/resnet.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/identification/reid/models/resnet_rpp.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/identification/reid/trainers_partloss.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/identification/reid/utils/__init__.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/identification/reid/utils/data/__init__.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/identification/reid/utils/data/dataset.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/identification/reid/utils/data/preprocessor.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/identification/reid/utils/data/sampler.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/identification/reid/utils/data/transforms.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/identification/reid/utils/logging.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/identification/reid/utils/meters.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/identification/reid/utils/osutils.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/identification/reid/utils/progress/LICENSE" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/identification/reid/utils/progress/MANIFEST.in" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/identification/reid/utils/progress/README.rst" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/identification/reid/utils/progress/progress/__init__.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/identification/reid/utils/progress/progress/bar.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/identification/reid/utils/progress/progress/counter.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/identification/reid/utils/progress/progress/helpers.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/identification/reid/utils/progress/progress/spinner.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/identification/reid/utils/progress/setup.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/identification/reid/utils/progress/test_progress.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/identification/reid/utils/serialization.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/identification/sample_submission.csv" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/identification/save_test.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/identification/test.csv" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/identification/test.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/identification/test112.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/identification/train.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/identification/train_PCB.sh" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/identification/train_RPP.sh" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/identification/train_result_mat.sh" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/identification/validation.csv" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/label.csv" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/preprocess/.gitattributes" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/preprocess/augment.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/preprocess/label.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/preprocess/requirement.sh" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/preprocess/slice.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/preprocess/whale_precut.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/result.csv" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/test.csv" afterPath="" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -19,7 +119,7 @@
         <entry file="file://$PROJECT_DIR$/identification/loaddata.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="280">
-              <caret line="57" column="0" lean-forward="true" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
+              <caret line="180" column="0" lean-forward="true" selection-start-line="180" selection-start-column="0" selection-end-line="180" selection-end-column="0" />
               <folding>
                 <element signature="e#0#54#0" expanded="true" />
               </folding>
@@ -116,8 +216,8 @@
       <file leaf-file-name="preprocessor.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/identification/reid/utils/data/preprocessor.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="182">
-              <caret line="13" column="27" lean-forward="false" selection-start-line="13" selection-start-column="27" selection-end-line="13" selection-end-column="27" />
+            <state relative-caret-position="156">
+              <caret line="48" column="0" lean-forward="true" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
               <folding>
                 <element signature="e#0#38#0" expanded="true" />
               </folding>
@@ -472,7 +572,7 @@
         <state relative-caret-position="285">
           <caret line="24" column="0" lean-forward="true" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
           <folding>
-            <element signature="e#0#54#0" expanded="true" />
+            <element signature="e#0#54#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -714,7 +814,7 @@
         <state relative-caret-position="308">
           <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
           <folding>
-            <element signature="e#0#54#0" expanded="true" />
+            <element signature="e#0#54#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -807,8 +907,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/identification/reid/utils/data/preprocessor.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="13" column="27" lean-forward="false" selection-start-line="13" selection-start-column="27" selection-end-line="13" selection-end-column="27" />
+        <state relative-caret-position="156">
+          <caret line="48" column="0" lean-forward="true" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
           <folding>
             <element signature="e#0#38#0" expanded="true" />
           </folding>
@@ -818,7 +918,7 @@
     <entry file="file://$PROJECT_DIR$/identification/loaddata.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="280">
-          <caret line="57" column="0" lean-forward="true" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
+          <caret line="180" column="0" lean-forward="true" selection-start-line="180" selection-start-column="0" selection-end-line="180" selection-end-column="0" />
           <folding>
             <element signature="e#0#54#0" expanded="true" />
           </folding>
