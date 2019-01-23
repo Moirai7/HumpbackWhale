@@ -4,12 +4,13 @@ from collections import OrderedDict
 import scipy.io as sio
 import torch
 import pandas as pd
+import numpy as np
 from .evaluation_metrics import cmc, mean_ap
 from .feature_extraction import extract_cnn_feature
 from .utils.meters import AverageMeter
 
 
-def extract_features(model, data_loader, print_freq=10):
+def extract_features(model, data_loader, print_freq=10,is_train=True):
     model.eval()
     batch_time = AverageMeter()
     data_time = AverageMeter()
@@ -18,13 +19,19 @@ def extract_features(model, data_loader, print_freq=10):
     labels = OrderedDict()
 
     end = time.time()
-    for i, (imgs, pids, fnames) in enumerate(data_loader):
+    for i, (imgs, pids, img_labels,index) in enumerate(data_loader):
         data_time.update(time.time() - end)
 
         outputs = extract_cnn_feature(model, imgs)
-        for fname, output, pid in zip(fnames, outputs, pids):
-            features[fname] = output
-            labels[fname] = pid
+        #print(index)
+        index = index.numpy()
+        #print(index)
+        #print(i, len(fnames),len(outputs),len(pids))
+        for idx, output, pid in zip(index, outputs, img_labels):
+            features[idx] = output
+            labels[idx] = pid
+            #print(idx)
+           # print(features[idx])
 
         batch_time.update(time.time() - end)
         end = time.time()
@@ -37,6 +44,8 @@ def extract_features(model, data_loader, print_freq=10):
                           batch_time.val, batch_time.avg,
                           data_time.val, data_time.avg))
 
+        #print("+++++++++++++++")
+
     return features, labels
 
 
@@ -48,9 +57,16 @@ def pairwise_distance(query_features, gallery_features, query=None, gallery=None
         dist = torch.pow(x, 2).sum(1) * 2
         dist = dist.expand(n, n) - 2 * torch.mm(x, x.t())
         return dist
-
-    x = torch.cat([query_features[f].unsqueeze(0) for f in query.Id], 0)
-    y = torch.cat([gallery_features[f].unsqueeze(0) for f in gallery.Id], 0)
+    print("+++++++++++++++")
+    tt = [1]
+    #print(query.Id[3])
+    #print(torch.Tensor(1).int().value())
+    #print(torch.tensor(1))
+    #print(query_features.size())
+    # print(query_features[1])
+    # print(query_features[query.Id[3]])
+    x = torch.cat([query_features[f].unsqueeze(0) for f in range(len(query))], 0)
+    y = torch.cat([gallery_features[f].unsqueeze(0) for f in range(len(query))], 0)
     m, n = x.size(0), y.size(0)
     x = x.view(m, -1)
     y = y.view(n, -1)
@@ -72,7 +88,7 @@ def find_top5_label(distmat, gallery=None):
                 if tmp_num >= 5:
                     tmp_lable_str = ""
                     for s in tmp_lable_list:
-                        tmp_lable_str = tmp_lable_str +" "+ gallery.Id[j]
+                        tmp_lable_str = tmp_lable_str +" "+ s
                     lable_list.append(tmp_lable_str)
                     break
 
@@ -91,9 +107,9 @@ class Evaluator(object):
 
     def evaluate(self, query_loader, gallery_loader, query, gallery):
         print('extracting query features\n')
-        query_features, _ = extract_features(self.model, query_loader)
+        query_features, query_label = extract_features(self.model, query_loader,is_train=True)
         print('extracting gallery features\n')
-        gallery_features, _ = extract_features(self.model, gallery_loader)
+        gallery_features, gallery_label = extract_features(self.model, gallery_loader,is_train=False)
         distmat = pairwise_distance(query_features, gallery_features, query, gallery)
         label = find_top5_label(distmat, gallery=gallery)
         dataframe = pd.DataFrame({'Image': query.Image, 'Id': label})

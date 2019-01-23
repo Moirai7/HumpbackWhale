@@ -5,20 +5,26 @@ import os
 from PIL import Image
 
 class HW_Dataset(object):
-    def __init__(self, filepath, csv_path=None, transform=None):
+    def __init__(self, filepath, csv, transform=None):
         self.file_path = filepath
-        self.df = pd.read_csv(csv_path)
+        self.df = csv
         self.transform = transform
-        self.image_list = [x for x in os.listdir(self.file_path)]
 
     def __len__(self):
-        return (len(self.image_list))
+        return (len(self.df.Image))
 
-    def __getitem__(self, idx):
+    def __getitem__(self, indices):
+        if isinstance(indices, (tuple, list)):
+            return [self._get_single_item(index) for index in indices]
+        return self._get_single_item(indices)
+
+    def _get_single_item(self, idx):
+        print(idx,self.__len__())
+        img_name = self.df.Image[idx]
         img_path = os.path.join(self.file_path, self.df.Image[idx])
         label = self.df.Id[idx]
         new_label = self.df.newId[idx]
-
+        index = self.df.index[idx]
         # img = cv2.imread(img_path)
         # img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
         imgs = Image.open(img_path)
@@ -26,31 +32,36 @@ class HW_Dataset(object):
         imgs = imgs.convert('RGB')
         imgs = self.transform(imgs)
 
-        return imgs, new_label,label
+        return imgs, new_label, label,index
 
 class HW_Test_Dataset(object):
-    def __init__(self, filepath, csv_path=None, transform=None):
+    def __init__(self, filepath, csv, transform=None):
         self.file_path = filepath
-        self.df = pd.read_csv(csv_path)
+        self.df = csv
         self.transform = transform
-        self.image_list = [x for x in os.listdir(self.file_path)]
 
     def __len__(self):
-        return (len(self.image_list))
+        return (len(self.df.Image))
 
-    def __getitem__(self, idx):
-        img_path = os.path.join(self.file_path, self.df.Image[idx])
+    def __getitem__(self, indices):
+        if isinstance(indices, (tuple, list)):
+            return [self._get_single_item(index) for index in indices]
+        return self._get_single_item(indices)
+
+    def _get_single_item(self, idx):
+        img_name = self.df.Image[idx]
+        img_path = os.path.join(self.file_path, img_name)
         label = self.df.Id[idx]
-        #new_label = self.df.newId[idx]
+        new_label = self.df.Id[idx]
 
         # img = cv2.imread(img_path)
         # img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
-        imgs = Image.open(img_path)
-
+        #imgs = self.image_list[idx]#Image.open(img_path)
+        imgs =  Image.open(img_path)
         imgs = imgs.convert('RGB')
         imgs = self.transform(imgs)
 
-        return imgs, label, label
+        return imgs, new_label, label,label
 
 class Preprocessor(object):
     def __init__(self, dataset, root=None, transform=None):

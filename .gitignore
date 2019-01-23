@@ -1,4 +1,5 @@
 dataset/*
+converted/*
 newdataset/*
 *.mlmodel
 *.out
