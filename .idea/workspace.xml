@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dcb3f7f7-dbf6-4b30-948c-8d1a3c1f582c" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/identification/convert_model_to_app.py" afterPath="$PROJECT_DIR$/identification/convert_model_to_app.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -13,7 +12,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/HumpbackWhale$convert_model_to_app.coverage" NAME="convert_model_to_app Coverage Results" MODIFIED="1548217894563" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/identification" />
+    <SUITE FILE_PATH="coverage/HumpbackWhale$convert_model_to_app.coverage" NAME="convert_model_to_app Coverage Results" MODIFIED="1548221187062" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/identification" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="450">
@@ -32,11 +31,31 @@
       <file leaf-file-name="convert_model_to_app.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/identification/convert_model_to_app.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="354">
+            <state relative-caret-position="239">
               <caret line="25" column="0" lean-forward="true" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
               <folding>
                 <element signature="e#0#54#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="__init__.py" pinned="false" current-in-tab="false">
+        <entry file="file://C:/ProgramData/Miniconda3/Lib/site-packages/torch/onnx/__init__.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="228">
+              <caret line="25" column="20" lean-forward="true" selection-start-line="25" selection-start-column="20" selection-end-line="25" selection-end-column="20" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="utils.py" pinned="false" current-in-tab="false">
+        <entry file="file://C:/ProgramData/Miniconda3/Lib/site-packages/torch/onnx/utils.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-25">
+              <caret line="43" column="20" lean-forward="false" selection-start-line="43" selection-start-column="20" selection-end-line="43" selection-end-column="20" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -81,18 +100,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="market.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/identification/reid/datasets/market.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="759">
-              <caret line="39" column="37" lean-forward="false" selection-start-line="39" selection-start-column="37" selection-end-line="39" selection-end-column="37" />
-              <folding>
-                <element signature="e#0#54#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="evaluators.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/identification/reid/evaluators.py">
           <provider selected="true" editor-type-id="text-editor">
@@ -101,16 +108,6 @@
               <folding>
                 <element signature="e#0#54#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ranking.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/identification/reid/evaluation_metrics/ranking.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1725">
-              <caret line="81" column="4" lean-forward="false" selection-start-line="81" selection-start-column="4" selection-end-line="81" selection-end-column="4" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -221,11 +218,6 @@
             <path>
               <item name="HumpbackWhale" type="b2602c69:ProjectViewProjectNode" />
               <item name="HumpbackWhale" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="HumpbackWhale" type="b2602c69:ProjectViewProjectNode" />
-              <item name="HumpbackWhale" type="462c0819:PsiDirectoryNode" />
-              <item name="identification" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -650,9 +642,25 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://C:/ProgramData/Miniconda3/Lib/site-packages/torch/onnx/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="25" column="20" lean-forward="true" selection-start-line="25" selection-start-column="20" selection-end-line="25" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/ProgramData/Miniconda3/Lib/site-packages/torch/onnx/utils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-25">
+          <caret line="43" column="20" lean-forward="false" selection-start-line="43" selection-start-column="20" selection-end-line="43" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/identification/convert_model_to_app.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="354">
+        <state relative-caret-position="239">
           <caret line="25" column="0" lean-forward="true" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
           <folding>
             <element signature="e#0#54#0" expanded="true" />
