@@ -27,7 +27,7 @@ def extract_features(model, data_loader, print_freq=10):
         for fname, output, pid in zip(fnames, outputs, pids):
             features[fname] = output
             labels[fname] = pid
-            print(fname,len(fname),len(output))
+            #print(fname,len(output))
 
         batch_time.update(time.time() - end)
         end = time.time()
