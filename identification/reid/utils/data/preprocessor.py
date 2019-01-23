@@ -49,14 +49,14 @@ class HW_Test_Dataset(object):
         return self._get_single_item(indices)
 
     def _get_single_item(self, idx):
-        #img_path = os.path.join(self.file_path, self.df.Image[idx])
+        img_path = os.path.join(self.file_path, self.df.Image[idx])
         label = self.df.Id[idx]
         new_label = self.df.Id[idx]
 
         # img = cv2.imread(img_path)
         # img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
-        imgs = self.image_list[idx]#Image.open(img_path)
-
+        #imgs = self.image_list[idx]#Image.open(img_path)
+        imgs =  Image.open(img_path)
         imgs = imgs.convert('RGB')
         imgs = self.transform(imgs)
 
