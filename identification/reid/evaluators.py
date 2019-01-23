@@ -56,7 +56,7 @@ def pairwise_distance(query_features, gallery_features, query=None, gallery=None
         return dist
     print("+++++++++++++++")
     tt = [1]
-    print(query_features[torch.LongTensor(tt)])
+    print(query_features[torch.LongTensor(tt)[0]])
     x = torch.cat([query_features[f].unsqueeze(0) for f in torch.LongTensor(np.arange(len(query)))], 0)
     y = torch.cat([gallery_features[f].unsqueeze(0) for f in torch.LongTensor(np.arange(len(query)))], 0)
     m, n = x.size(0), y.size(0)
@@ -80,7 +80,7 @@ def find_top5_label(distmat, gallery=None):
                 if tmp_num >= 5:
                     tmp_lable_str = ""
                     for s in tmp_lable_list:
-                        tmp_lable_str = tmp_lable_str +" "+ gallery.Id[j]
+                        tmp_lable_str = tmp_lable_str +" "+ s
                     lable_list.append(tmp_lable_str)
                     break
 
