@@ -46,7 +46,7 @@ def get_data(dataset_dir, height, width, batch_size, workers):
         normalizer,
     ])
     train_loader = DataLoader(
-        HW_Dataset(train_filepath, train_csv_path, transform=train_transformer),
+        HW_Test_Dataset(train_filepath, train_csv_path, transform=train_transformer),
         batch_size=batch_size, num_workers=workers,
         shuffle=True, pin_memory=True, drop_last=False)
 
