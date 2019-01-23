@@ -25,5 +25,5 @@ osp.join('logs/humpbackWhale/', 'checkpoint.pth.tar')
 
 
 checkpoint = load_checkpoint(osp.join('logs/humpbackWhale/', 'checkpoint.pth.tar'))
-model.module.load_state_dict(checkpoint['state_dict'])
+model.load_state_dict(checkpoint['state_dict'])
 torch.onnx.export(model, dummy_input, "alexnet.proto", verbose=True)
