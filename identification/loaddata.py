@@ -172,7 +172,7 @@ def  main(args):
     # model1 = torch.load("model.pth")
     query = pd.read_csv('../dataset/test.csv')
     gallery = pd.read_csv('../dataset/label.csv')
-    #print(query.Id)
+    print(len(query),len(gallery),len(os.listdir("../dataset/train")),len(os.listdir("../dataset/test")))
     evaluator.evaluate(train_loader, test_loader, query, gallery)
 
 
