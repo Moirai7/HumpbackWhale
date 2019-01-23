@@ -50,10 +50,12 @@ def get_data(dataset_dir, height, width, batch_size, workers):
         batch_size=batch_size, num_workers=workers,
         shuffle=True, pin_memory=True, drop_last=True)
 
+    test_dataset = HW_Test_Dataset(test_filepath, test_csv_path, transform=test_transformer)
+    print(test_dataset)
     test_loader = DataLoader(
-        HW_Test_Dataset(test_filepath, test_csv_path, transform=test_transformer),
+        test_dataset,
         batch_size=batch_size, num_workers=workers,
-        shuffle=False, pin_memory=True)
+        shuffle=False, pin_memory=True, drop_last=False)
     #
     # gallery_loader = DataLoader(
     #     HW_Dataset(test_filepath, csv_path, transform=test_transformer),
@@ -69,7 +71,7 @@ def  main(args):
     # num_classes = max(list(map(int,df.newId[1])))
     # print(num_classes)
     num_classes = 5005
-    os.environ["CUDA_VISIBLE_DEVICES"] = "0"
+    #os.environ["CUDA_VISIBLE_DEVICES"] = "0"
 
     #device_ids = [0, 1, 2, 3]
     np.random.seed(args.seed)
@@ -95,7 +97,7 @@ def  main(args):
     # Create model
     model = models.create(args.arch, num_features=args.features,
                           dropout=args.dropout, num_classes=num_classes,cut_at_pooling=False, FCN=True)
-    torch.save(model, 'model.pth')
+    #torch.save(model, 'model.pth')
     # Load from checkpoint
     start_epoch = best_top1 = 0
     if args.resume:
@@ -111,8 +113,8 @@ def  main(args):
               .format(start_epoch, best_top1))
 
     #model = nn.DataParallel(model)
-    #model = nn.DataParallel(model).cuda()
-    model = model.cuda()
+    model = nn.DataParallel(model).cuda()
+    #model = model.cuda()
 
 
     # Evaluator
@@ -170,7 +172,7 @@ def  main(args):
     # model1 = torch.load("model.pth")
     query = pd.read_csv('../dataset/test.csv')
     gallery = pd.read_csv('../dataset/label.csv')
-    evaluator.evaluate(train_loader, train_loader, query, gallery)
+    evaluator.evaluate(test_loader, train_loader, query, gallery)
 
 
 if __name__ == '__main__':
