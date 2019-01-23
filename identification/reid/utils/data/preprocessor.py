@@ -20,6 +20,7 @@ class HW_Dataset(object):
         return self._get_single_item(indices)
 
     def _get_single_item(self, idx):
+        img_name = self.df.Image[idx]
         img_path = os.path.join(self.file_path, self.df.Image[idx])
         label = self.df.Id[idx]
         new_label = self.df.newId[idx]
@@ -31,7 +32,7 @@ class HW_Dataset(object):
         imgs = imgs.convert('RGB')
         imgs = self.transform(imgs)
 
-        return imgs, new_label, label
+        return imgs, new_label, label,img_name
 
 class HW_Test_Dataset(object):
     def __init__(self, filepath, csv_path=None, transform=None):
@@ -49,7 +50,8 @@ class HW_Test_Dataset(object):
         return self._get_single_item(indices)
 
     def _get_single_item(self, idx):
-        img_path = os.path.join(self.file_path, self.df.Image[idx])
+        img_name = self.df.Image[idx]
+        img_path = os.path.join(self.file_path, img_name)
         label = self.df.Id[idx]
         new_label = self.df.Id[idx]
 
@@ -60,7 +62,7 @@ class HW_Test_Dataset(object):
         imgs = imgs.convert('RGB')
         imgs = self.transform(imgs)
 
-        return imgs, new_label, label
+        return imgs, new_label, label,img_name
 
 class Preprocessor(object):
     def __init__(self, dataset, root=None, transform=None):
