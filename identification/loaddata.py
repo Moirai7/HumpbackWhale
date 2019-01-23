@@ -172,7 +172,7 @@ def  main(args):
     query = pd.read_csv('../dataset/test.csv')
     gallery = pd.read_csv('../dataset/label.csv')
     #print(len(query),len(gallery),len(os.listdir("../dataset/train")),len(os.listdir("../dataset/test")))
-    evaluator.evaluate(train_loader, test_loader, query, gallery)
+    evaluator.evaluate(test_loader,train_loader,  query, gallery)
 
 
 if __name__ == '__main__':

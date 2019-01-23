@@ -55,7 +55,8 @@ def pairwise_distance(query_features, gallery_features, query=None, gallery=None
         dist = dist.expand(n, n) - 2 * torch.mm(x, x.t())
         return dist
     print("+++++++++++++++")
-    print(query_features[torch.LongTensor(3)])
+    tt = 3
+    print(query_features[torch.LongTensor(tt)])
     x = torch.cat([query_features[f].unsqueeze(0) for f in torch.LongTensor(np.arange(len(query)))], 0)
     y = torch.cat([gallery_features[f].unsqueeze(0) for f in torch.LongTensor(np.arange(len(query)))], 0)
     m, n = x.size(0), y.size(0)
