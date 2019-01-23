@@ -57,7 +57,7 @@ def get_data(dataset_dir, height, width, batch_size, workers):
     #print(test_dataset)
 
     test_loader = DataLoader(
-        HW_Test_Dataset(test_filepath, df_test, transform=test_transformer),
+        HW_Test_Dataset(train_filepath, df_test, transform=test_transformer),
         batch_size=batch_size, num_workers=workers,
         shuffle=False, pin_memory=True, drop_last=False)
     #
