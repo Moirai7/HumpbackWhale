@@ -125,7 +125,7 @@ def  main(args):
     evaluator = Evaluator(model)
     if args.evaluate:
         print("Test:")
-        evaluator.evaluate(test_loader, train_loader,   dataset.query, dataset.gallery)
+        evaluator.evaluate( train_loader, test_loader,  dataset.query, dataset.gallery)
         return
 
     # Criterion
