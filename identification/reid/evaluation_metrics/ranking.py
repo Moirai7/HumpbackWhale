@@ -79,8 +79,7 @@ def cmc(distmat, query_ids=None, gallery_ids=None,
     return ret.cumsum() / num_valid_queries
 
 
-def mean_ap(distmat, query_ids=None, gallery_ids=None,
-            query_cams=None, gallery_cams=None):
+def mean_ap(distmat, query_ids=None, gallery_ids=None):
     distmat = to_numpy(distmat)
     m, n = distmat.shape
     # Fill up default values

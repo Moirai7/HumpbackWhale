@@ -5,7 +5,7 @@ import os
 from PIL import Image
 
 class HW_Dataset(object):
-    def __init__(self, filepath, csv_path, transform=None):
+    def __init__(self, filepath, csv_path=None, transform=None):
         self.file_path = filepath
         self.df = pd.read_csv(csv_path)
         self.transform = transform
@@ -15,7 +15,6 @@ class HW_Dataset(object):
         return (len(self.image_list))
 
     def __getitem__(self, idx):
-
         img_path = os.path.join(self.file_path, self.df.Image[idx])
         label = self.df.Id[idx]
         new_label = self.df.newId[idx]
@@ -27,7 +26,31 @@ class HW_Dataset(object):
         imgs = imgs.convert('RGB')
         imgs = self.transform(imgs)
 
-        return imgs, new_label
+        return imgs, new_label,label
+
+class HW_Test_Dataset(object):
+    def __init__(self, filepath, csv_path=None, transform=None):
+        self.file_path = filepath
+        self.df = pd.read_csv(csv_path)
+        self.transform = transform
+        self.image_list = [x for x in os.listdir(self.file_path)]
+
+    def __len__(self):
+        return (len(self.image_list))
+
+    def __getitem__(self, idx):
+        img_path = os.path.join(self.file_path, self.df.Image[idx])
+        label = self.df.Id[idx]
+        #new_label = self.df.newId[idx]
+
+        # img = cv2.imread(img_path)
+        # img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
+        imgs = Image.open(img_path)
+
+        imgs = imgs.convert('RGB')
+        imgs = self.transform(imgs)
+
+        return imgs, label, label
 
 class Preprocessor(object):
     def __init__(self, dataset, root=None, transform=None):

@@ -28,7 +28,7 @@ class HW_Dataset(object):
         self.df = pd.read_csv(csv_path)
         self.transform = transform
         self.image_list = [x for x in os.listdir(self.file_path)]
-
+        self.train, self.test = [], [], []
     def __len__(self):
         return (len(self.image_list))
 
