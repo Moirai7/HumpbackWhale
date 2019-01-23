@@ -49,7 +49,7 @@ class HW_Test_Dataset(object):
         return self._get_single_item(indices)
 
     def _get_single_item(self, idx):
-        img_path = os.path.join(self.file_path, self.df.Image[idx].values)
+        img_path = os.path.join(self.file_path, self.df["Image"][idx].values)
         label = self.df.Id[idx]
         new_label = self.df.Id[idx]
 
