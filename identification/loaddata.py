@@ -165,8 +165,8 @@ def  main(args):
     print('Test with best model:')
     checkpoint = load_checkpoint(osp.join(args.logs_dir, 'checkpoint.pth.tar'))
     model.module.load_state_dict(checkpoint['state_dict'])
-    torch.save(model.state_dict(), 'model.pth')
-
+    torch.save(model, 'model.pth')
+    model1 = torch.load("model.pth")
     query = pd.read_csv('../dataset/test.csv')
     gallery = pd.read_csv('../dataset/label.csv')
     evaluator.evaluate(test_loader, train_loader, query, gallery)
