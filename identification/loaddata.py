@@ -34,7 +34,11 @@ def get_data(dataset_dir, height, width, batch_size, workers):
     df = df.sample(frac=1)
     cut_idx = int(round(0.2 * df.shape[0]))
     df_test, df_train = df.iloc[:cut_idx], df.iloc[cut_idx:]
-
+    df_test.to_csv("label1.csv",index=0)
+    df_train.to_csv("label2.csv",index =0)
+    df_test =pd.read_csv("label1.csv")
+    df_train = pd.read_csv("label2.csv")
+    print(df_test,df_train)
     normalizer = T.Normalize(mean=[0.485, 0.456, 0.406],
                              std=[0.229, 0.224, 0.225])
 
@@ -53,7 +57,7 @@ def get_data(dataset_dir, height, width, batch_size, workers):
     train_loader = DataLoader(
         HW_Dataset(train_filepath, df_train, transform=train_transformer),
         batch_size=batch_size, num_workers=workers,
-        shuffle=True, pin_memory=True, drop_last=False)
+        shuffle=False, pin_memory=True, drop_last=False)
     #print(test_dataset)
 
     test_loader = DataLoader(
