@@ -80,3 +80,35 @@ CMC Scores    allshots      cuhk03  market1501
   top-1          61.1%       80.3%       92.5%
   top-5          74.9%       93.1%       96.9%
   top-10         80.2%       95.7%       97.8%
+Traceback (most recent call last):
+  File "loaddata.py", line 14, in <module>
+    from reid import datasets
+  File "/home/xutongkun1208/HumpbackWhale/identification/reid/__init__.py", line 6, in <module>
+    from . import models
+  File "/home/xutongkun1208/HumpbackWhale/identification/reid/models/__init__.py", line 3, in <module>
+    from .resnet import *
+  File "/home/xutongkun1208/HumpbackWhale/identification/reid/models/resnet.py", line 7, in <module>
+    import torchvision
+ModuleNotFoundError: No module named 'torchvision'
+/home/xutongkun1208/HumpbackWhale/identification/reid/models/resnet.py:48: UserWarning: nn.init.kaiming_normal is now deprecated in favor of nn.init.kaiming_normal_.
+  init.kaiming_normal(self.local_conv.weight, mode= 'fan_out')
+/home/xutongkun1208/HumpbackWhale/identification/reid/models/resnet.py:51: UserWarning: nn.init.constant is now deprecated in favor of nn.init.constant_.
+  init.constant(self.feat_bn2d.weight,1) #initialize BN, may not be used
+/home/xutongkun1208/HumpbackWhale/identification/reid/models/resnet.py:52: UserWarning: nn.init.constant is now deprecated in favor of nn.init.constant_.
+  init.constant(self.feat_bn2d.bias,0) # iniitialize BN, may not be used
+/home/xutongkun1208/HumpbackWhale/identification/reid/models/resnet.py:56: UserWarning: nn.init.normal is now deprecated in favor of nn.init.normal_.
+  init.normal(self.instance0.weight, std=0.001)
+/home/xutongkun1208/HumpbackWhale/identification/reid/models/resnet.py:57: UserWarning: nn.init.constant is now deprecated in favor of nn.init.constant_.
+  init.constant(self.instance0.bias, 0)
+/home/xutongkun1208/HumpbackWhale/identification/reid/models/resnet.py:61: UserWarning: nn.init.normal is now deprecated in favor of nn.init.normal_.
+  init.normal(self.instance1.weight, std=0.001)
+/home/xutongkun1208/HumpbackWhale/identification/reid/models/resnet.py:62: UserWarning: nn.init.constant is now deprecated in favor of nn.init.constant_.
+  init.constant(self.instance1.bias, 0)
+Test with best model:
+=> Loaded checkpoint 'logs/humpbackWhale/checkpoint.pth.tar'
+Traceback (most recent call last):
+  File "loaddata.py", line 208, in <module>
+    parser.add_argument('--print-freq', type=int, default=1)
+  File "loaddata.py", line 163, in main
+    
+NameError: name 'test_loader' is not defined
