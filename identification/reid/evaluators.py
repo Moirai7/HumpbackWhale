@@ -20,8 +20,9 @@ def extract_features(model, data_loader, print_freq=10):
     end = time.time()
     for i, (imgs, pids, fnames) in enumerate(data_loader):
         data_time.update(time.time() - end)
-        print(i,len(fnames))
+
         outputs = extract_cnn_feature(model, imgs)
+        print(i, len(fnames),len(outputs),len(pids))
         for fname, output, pid in zip(fnames, outputs, pids):
             features[fname] = output
             labels[fname] = pid
@@ -36,6 +37,8 @@ def extract_features(model, data_loader, print_freq=10):
                   .format(i + 1, len(data_loader),
                           batch_time.val, batch_time.avg,
                           data_time.val, data_time.avg))
+
+        print("+++++++++++++++")
 
     return features, labels
 
