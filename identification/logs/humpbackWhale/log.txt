@@ -1,0 +1,4 @@
+Test with best model:
+=> Loaded checkpoint 'logs/humpbackWhale/checkpoint.pth.tar'
+extracting query features
+

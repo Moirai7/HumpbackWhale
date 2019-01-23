@@ -165,6 +165,8 @@ def  main(args):
     print('Test with best model:')
     checkpoint = load_checkpoint(osp.join(args.logs_dir, 'checkpoint.pth.tar'))
     model.module.load_state_dict(checkpoint['state_dict'])
+    torch.save(model.state_dict(), 'model.pth')
+
     query = pd.read_csv('../dataset/test.csv')
     gallery = pd.read_csv('../dataset/label.csv')
     evaluator.evaluate(test_loader, train_loader, query, gallery)
@@ -190,7 +192,7 @@ if __name__ == '__main__':
     # model
     parser.add_argument('-a', '--arch', type=str, default='resnet50',
                         choices=models.names())
-    parser.add_argument('--ures', type=int, default=128)
+    parser.add_argument('--features', type=int, default=128)
     parser.add_argument('--dropout', type=float, default=0.5)
     # optimizer
     parser.add_argument('--lr', type=float, default=0.1,
