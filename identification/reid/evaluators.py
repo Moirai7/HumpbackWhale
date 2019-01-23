@@ -4,6 +4,7 @@ from collections import OrderedDict
 import scipy.io as sio
 import torch
 import pandas as pd
+import numpy as np
 from .evaluation_metrics import cmc, mean_ap
 from .feature_extraction import extract_cnn_feature
 from .utils.meters import AverageMeter
@@ -27,7 +28,7 @@ def extract_features(model, data_loader, print_freq=10,is_train=True):
         for idx, output, pid in zip(index, outputs, img_labels):
             features[idx] = output
             labels[idx] = pid
-            print(idx)
+            #print(idx)
 
         batch_time.update(time.time() - end)
         end = time.time()
@@ -54,9 +55,9 @@ def pairwise_distance(query_features, gallery_features, query=None, gallery=None
         dist = dist.expand(n, n) - 2 * torch.mm(x, x.t())
         return dist
     print("+++++++++++++++")
-    print(query_features[query.Id[1]])
-    x = torch.cat([query_features[f].unsqueeze(0) for f in query.Image], 0)
-    y = torch.cat([gallery_features[f].unsqueeze(0) for f in gallery.Image], 0)
+    print(query_features[torch.LongTensor(3)])
+    x = torch.cat([query_features[f].unsqueeze(0) for f in torch.LongTensor(np.arange(len(query)))], 0)
+    y = torch.cat([gallery_features[f].unsqueeze(0) for f in torch.LongTensor(np.arange(len(query)))], 0)
     m, n = x.size(0), y.size(0)
     x = x.view(m, -1)
     y = y.view(n, -1)
