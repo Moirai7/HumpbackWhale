@@ -30,6 +30,11 @@ def get_data(dataset_dir, height, width, batch_size, workers):
     test_filepath = osp.join(dataset_dir,'test/')
     test_csv_path = osp.join(dataset_dir,'test.csv')
 
+    df = pd.read_csv("../dataset/label.csv")
+    df = df.sample(frac=1)
+    cut_idx = int(round(0.2 * df.shape[0]))
+    df_test, df_train = df.iloc[:cut_idx], df.iloc[cut_idx:]
+
     normalizer = T.Normalize(mean=[0.485, 0.456, 0.406],
                              std=[0.229, 0.224, 0.225])
 
@@ -46,13 +51,13 @@ def get_data(dataset_dir, height, width, batch_size, workers):
         normalizer,
     ])
     train_loader = DataLoader(
-        HW_Dataset(train_filepath, train_csv_path, transform=train_transformer),
+        HW_Dataset(train_filepath, df_train, transform=train_transformer),
         batch_size=batch_size, num_workers=workers,
         shuffle=True, pin_memory=True, drop_last=False)
     #print(test_dataset)
 
     test_loader = DataLoader(
-        HW_Test_Dataset(test_filepath, test_csv_path, transform=test_transformer),
+        HW_Test_Dataset(train_filepath, df_test, transform=test_transformer),
         batch_size=batch_size, num_workers=workers,
         shuffle=False, pin_memory=True, drop_last=False)
     #
@@ -120,7 +125,7 @@ def  main(args):
     evaluator = Evaluator(model)
     if args.evaluate:
         print("Test:")
-        evaluator.evaluate(test_loader, train_loader,   dataset.query, dataset.gallery)
+        evaluator.evaluate( train_loader, test_loader,  dataset.query, dataset.gallery)
         return
 
     # Criterion
@@ -152,16 +157,16 @@ def  main(args):
         for g in optimizer.param_groups:
             g['lr'] = lr * g.get('lr_mult', 1)#if lr_mult do not find,return defualt value 1
 
-    # Start training
-    # for epoch in range(start_epoch, args.epochs):
-    #     adjust_lr(epoch)
-    #     trainer.train(epoch, train_loader, optimizer)
-    #     is_best = True
-    #     save_checkpoint({
-    #         'state_dict': model.module.state_dict(),
-    #         'epoch': epoch + 1,
-    #         'best_top1': best_top1,
-    #     }, is_best, fpath=osp.join(args.logs_dir, 'checkpoint.pth.tar'))
+    #Start training
+    for epoch in range(start_epoch, args.epochs):
+        adjust_lr(epoch)
+        trainer.train(epoch, train_loader, optimizer)
+        is_best = True
+        save_checkpoint({
+            'state_dict': model.module.state_dict(),
+            'epoch': epoch + 1,
+            'best_top1': best_top1,
+        }, is_best, fpath=osp.join(args.logs_dir, 'checkpoint.pth.tar'))
 
     # Final test
     print('Test with best model:')
@@ -172,7 +177,7 @@ def  main(args):
     query = pd.read_csv('../dataset/test.csv')
     gallery = pd.read_csv('../dataset/label.csv')
     #print(len(query),len(gallery),len(os.listdir("../dataset/train")),len(os.listdir("../dataset/test")))
-    evaluator.evaluate(test_loader,train_loader,  query, gallery)
+    evaluator.evaluate(train_loader, test_loader, query, gallery)
 
 
 if __name__ == '__main__':
