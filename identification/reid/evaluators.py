@@ -3,7 +3,7 @@ import time
 from collections import OrderedDict
 import scipy.io as sio
 import torch
-
+import pandas as pd
 from .evaluation_metrics import cmc, mean_ap
 from .feature_extraction import extract_cnn_feature
 from .utils.meters import AverageMeter
@@ -49,8 +49,8 @@ def pairwise_distance(query_features, gallery_features, query=None, gallery=None
         dist = dist.expand(n, n) - 2 * torch.mm(x, x.t())
         return dist
 
-    x = torch.cat([query_features[f].unsqueeze(0) for _, _, f in query], 0)
-    y = torch.cat([gallery_features[f].unsqueeze(0) for _, _, f in gallery], 0)
+    x = torch.cat([query_features[f].unsqueeze(0) for f in query.Id], 0)
+    y = torch.cat([gallery_features[f].unsqueeze(0) for f in gallery.Id], 0)
     m, n = x.size(0), y.size(0)
     x = x.view(m, -1)
     y = y.view(n, -1)
@@ -60,9 +60,26 @@ def pairwise_distance(query_features, gallery_features, query=None, gallery=None
     return dist
 
 def find_top5_label(distmat, gallery=None):
-    top_dist,top_list = torch.topk(distmat,5,dim=1,largest=False)
-    lable_list =[gallery.Id[i].unsqueeze(0) for i in top_list]
-    lable_list = torch.cat(lable_list,dim=0)
+    sort_dist,sort_idx = torch.sort(distmat,dim=1,descending=False)
+    lable_list =[]
+    for i in range(sort_dist.size(0)):
+        tmp_lable_list=[]
+        tmp_num= 0
+        for j in sort_idx[i]:
+            if  gallery.Id[j] not in tmp_lable_list:
+                tmp_lable_list.append(gallery.Id[j])
+                tmp_num = tmp_num + 1
+                if tmp_num >= 5:
+                    tmp_lable_str = ""
+                    for s in tmp_lable_list:
+                        tmp_lable_str = tmp_lable_str +" "+ gallery.Id[j]
+                    lable_list.append(tmp_lable_str)
+                    break
+
+    #
+    # top_dist,top_list = torch.topk(distmat,5,dim=1,largest=False)
+    # lable_list =[gallery.Id[i].unsqueeze(0) for i in top_list]
+    # lable_list = torch.cat(lable_list,dim=0)
     return lable_list
 
 
@@ -78,4 +95,10 @@ class Evaluator(object):
         print('extracting gallery features\n')
         gallery_features, _ = extract_features(self.model, gallery_loader)
         distmat = pairwise_distance(query_features, gallery_features, query, gallery)
+        label = find_top5_label(distmat, gallery=gallery)
+        dataframe = pd.DataFrame({'Image': query.Image, 'Id': label})
+
+        # 将DataFrame存储为csv,index表示是否显示行名，default=True
+        dataframe.to_csv("~/HumpbackWhale/result.csv", index=False, sep=',')
+
         return find_top5_label(distmat, gallery=gallery)
