@@ -121,7 +121,7 @@ def  main(args):
     evaluator = Evaluator(model)
     if args.evaluate:
         print("Test:")
-        evaluator.evaluate(test_loader, train_loader,  dataset.query, dataset.gallery)
+        evaluator.evaluate(test_loader, train_loader,   dataset.query, dataset.gallery)
         return
 
     # Criterion
@@ -173,7 +173,7 @@ def  main(args):
     query = pd.read_csv('../dataset/test.csv')
     gallery = pd.read_csv('../dataset/label.csv')
     #print(query.Id)
-    evaluator.evaluate(test_loader, train_loader, query, gallery)
+    evaluator.evaluate(train_loader, test_loader, query, gallery)
 
 
 if __name__ == '__main__':
