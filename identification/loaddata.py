@@ -11,14 +11,15 @@ from torch.backends import cudnn
 from torch.utils.data import DataLoader
 import pandas as pd
 
-from .reid import datasets
-from .reid import models
-from .reid.trainers_partloss import Trainer
-from .reid.evaluators import Evaluator
+from reid import datasets
+from reid import models
+from reid.trainers_partloss import Trainer
+from reid.evaluators import Evaluator
 from reid.utils.data import transforms as T
 from reid.utils.data.preprocessor import HW_Dataset,HW_Test_Dataset
 from reid.utils.logging import Logger
 from reid.utils.serialization import load_checkpoint, save_checkpoint
+
 
 
 #os.environ["CUDA_VISIBLE_DEVICES"] = "0"
