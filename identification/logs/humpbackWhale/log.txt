@@ -1,4 +1,29 @@
+<reid.utils.data.preprocessor.HW_Test_Dataset object at 0x7efe1a694cc0>
 Test with best model:
 => Loaded checkpoint 'logs/humpbackWhale/checkpoint.pth.tar'
 extracting query features
 
+Extract Features: [10/249]	Time 0.081 (0.234)	Data 0.000 (0.061)	
+Extract Features: [20/249]	Time 0.092 (0.161)	Data 0.011 (0.034)	
+Extract Features: [30/249]	Time 0.093 (0.144)	Data 0.011 (0.032)	
+Extract Features: [40/249]	Time 0.081 (0.138)	Data 0.000 (0.034)	
+Extract Features: [50/249]	Time 0.081 (0.131)	Data 0.000 (0.032)	
+Extract Features: [60/249]	Time 0.081 (0.129)	Data 0.000 (0.032)	
+Extract Features: [70/249]	Time 0.082 (0.126)	Data 0.000 (0.032)	
+Extract Features: [80/249]	Time 0.081 (0.124)	Data 0.000 (0.031)	
+Extract Features: [90/249]	Time 0.092 (0.123)	Data 0.000 (0.032)	
+Extract Features: [100/249]	Time 0.081 (0.122)	Data 0.000 (0.032)	
+Extract Features: [110/249]	Time 0.080 (0.121)	Data 0.000 (0.031)	
+Extract Features: [120/249]	Time 0.082 (0.120)	Data 0.000 (0.031)	
+Extract Features: [130/249]	Time 0.080 (0.120)	Data 0.000 (0.031)	
+Extract Features: [140/249]	Time 0.081 (0.118)	Data 0.000 (0.031)	
+Extract Features: [150/249]	Time 0.081 (0.118)	Data 0.000 (0.031)	
+Extract Features: [160/249]	Time 0.125 (0.118)	Data 0.043 (0.031)	
+Extract Features: [170/249]	Time 0.082 (0.118)	Data 0.000 (0.031)	
+Extract Features: [180/249]	Time 0.092 (0.117)	Data 0.011 (0.031)	
+Extract Features: [190/249]	Time 0.081 (0.118)	Data 0.000 (0.032)	
+Extract Features: [200/249]	Time 0.081 (0.117)	Data 0.000 (0.032)	
+Extract Features: [210/249]	Time 0.081 (0.118)	Data 0.000 (0.032)	
+Extract Features: [220/249]	Time 0.081 (0.117)	Data 0.000 (0.032)	
+Extract Features: [230/249]	Time 0.082 (0.117)	Data 0.000 (0.032)	
+Extract Features: [240/249]	Time 0.081 (0.117)	Data 0.000 (0.032)	

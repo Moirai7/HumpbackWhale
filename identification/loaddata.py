@@ -172,7 +172,8 @@ def  main(args):
     # model1 = torch.load("model.pth")
     query = pd.read_csv('../dataset/test.csv')
     gallery = pd.read_csv('../dataset/label.csv')
-    evaluator.evaluate(train_loader, train_loader, query, gallery)
+    #print(query.Id)
+    evaluator.evaluate(test_loader, train_loader, query, gallery)
 
 
 if __name__ == '__main__':

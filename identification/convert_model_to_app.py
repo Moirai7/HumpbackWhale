@@ -17,7 +17,7 @@ from reid.utils.serialization import load_checkpoint, save_checkpoint
 
 
 # Create model
-model = torch.load("model.pth")
+model = torch.load("model.pth").cuda()
 
 #model = nn.DataParallel(model).cuda()
 dummy_input = Variable(torch.randn(32, 3, 256, 256)).cuda()
