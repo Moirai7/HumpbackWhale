@@ -14,7 +14,12 @@ class HW_Dataset(object):
     def __len__(self):
         return (len(self.image_list))
 
-    def __getitem__(self, idx):
+    def __getitem__(self, indices):
+        if isinstance(indices, (tuple, list)):
+            return [self._get_single_item(index) for index in indices]
+        return self._get_single_item(indices)
+
+    def _get_single_item(self, idx):
         img_path = os.path.join(self.file_path, self.df.Image[idx])
         label = self.df.Id[idx]
         new_label = self.df.newId[idx]
@@ -38,10 +43,15 @@ class HW_Test_Dataset(object):
     def __len__(self):
         return (len(self.image_list))
 
-    def __getitem__(self, idx):
+    def __getitem__(self, indices):
+        if isinstance(indices, (tuple, list)):
+            return [self._get_single_item(index) for index in indices]
+        return self._get_single_item(indices)
+
+    def _get_single_item(self, idx):
         img_path = os.path.join(self.file_path, self.df.Image[idx])
         label = self.df.Id[idx]
-        #new_label = self.df.newId[idx]
+        new_label = self.df.Id[idx]
 
         # img = cv2.imread(img_path)
         # img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
@@ -50,7 +60,7 @@ class HW_Test_Dataset(object):
         imgs = imgs.convert('RGB')
         imgs = self.transform(imgs)
 
-        return imgs, label, label
+        return imgs, label, new_label
 
 class Preprocessor(object):
     def __init__(self, dataset, root=None, transform=None):
