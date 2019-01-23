@@ -31,7 +31,7 @@ class HW_Dataset(object):
         imgs = imgs.convert('RGB')
         imgs = self.transform(imgs)
 
-        return imgs, new_label,label
+        return imgs, new_label, label
 
 class HW_Test_Dataset(object):
     def __init__(self, filepath, csv_path=None, transform=None):
@@ -60,7 +60,7 @@ class HW_Test_Dataset(object):
         imgs = imgs.convert('RGB')
         imgs = self.transform(imgs)
 
-        return imgs, label, new_label
+        return imgs, new_label, label
 
 class Preprocessor(object):
     def __init__(self, dataset, root=None, transform=None):

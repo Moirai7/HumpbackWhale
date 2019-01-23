@@ -22,10 +22,12 @@ def extract_features(model, data_loader, print_freq=10):
         data_time.update(time.time() - end)
 
         outputs = extract_cnn_feature(model, imgs)
-        print(i, len(fnames),len(outputs),len(pids))
+
+        #print(i, len(fnames),len(outputs),len(pids))
         for fname, output, pid in zip(fnames, outputs, pids):
             features[fname] = output
             labels[fname] = pid
+            print(fname)
 
         batch_time.update(time.time() - end)
         end = time.time()
@@ -38,7 +40,7 @@ def extract_features(model, data_loader, print_freq=10):
                           batch_time.val, batch_time.avg,
                           data_time.val, data_time.avg))
 
-        print("+++++++++++++++")
+        #print("+++++++++++++++")
 
     return features, labels
 
@@ -51,7 +53,7 @@ def pairwise_distance(query_features, gallery_features, query=None, gallery=None
         dist = torch.pow(x, 2).sum(1) * 2
         dist = dist.expand(n, n) - 2 * torch.mm(x, x.t())
         return dist
-
+    print(query_features[query.Id[1]])
     x = torch.cat([query_features[f].unsqueeze(0) for f in query.Id], 0)
     y = torch.cat([gallery_features[f].unsqueeze(0) for f in gallery.Id], 0)
     m, n = x.size(0), y.size(0)

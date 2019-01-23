@@ -46,14 +46,13 @@ def get_data(dataset_dir, height, width, batch_size, workers):
         normalizer,
     ])
     train_loader = DataLoader(
-        HW_Test_Dataset(train_filepath, train_csv_path, transform=train_transformer),
+        HW_Dataset(train_filepath, train_csv_path, transform=train_transformer),
         batch_size=batch_size, num_workers=workers,
         shuffle=True, pin_memory=True, drop_last=False)
+    #print(test_dataset)
 
-    test_dataset = HW_Test_Dataset(test_filepath, test_csv_path, transform=test_transformer)
-    print(test_dataset)
     test_loader = DataLoader(
-        test_dataset,
+        HW_Test_Dataset(test_filepath, test_csv_path, transform=test_transformer),
         batch_size=batch_size, num_workers=workers,
         shuffle=False, pin_memory=True, drop_last=False)
     #
@@ -172,7 +171,7 @@ def  main(args):
     # model1 = torch.load("model.pth")
     query = pd.read_csv('../dataset/test.csv')
     gallery = pd.read_csv('../dataset/label.csv')
-    print(len(query),len(gallery),len(os.listdir("../dataset/train")),len(os.listdir("../dataset/test")))
+    #print(len(query),len(gallery),len(os.listdir("../dataset/train")),len(os.listdir("../dataset/test")))
     evaluator.evaluate(train_loader, test_loader, query, gallery)
 
 
