@@ -41,7 +41,7 @@ class HW_Test_Dataset(object):
         self.image_list = [x for x in os.listdir(self.file_path)]
 
     def __len__(self):
-        return (len(self.image_list)-10)
+        return (len(self.image_list)-8)
 
     def __getitem__(self, indices):
         if isinstance(indices, (tuple, list)):
