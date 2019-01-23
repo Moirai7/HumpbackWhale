@@ -30,6 +30,11 @@ def get_data(dataset_dir, height, width, batch_size, workers):
     test_filepath = osp.join(dataset_dir,'test/')
     test_csv_path = osp.join(dataset_dir,'test.csv')
 
+    df = pd.read_csv("../dataset/label.csv")
+    df = df.sample(frac=1)
+    cut_idx = int(round(0.2 * df.shape[0]))
+    df_test, df_train = df.iloc[:cut_idx], df.iloc[cut_idx:]
+
     normalizer = T.Normalize(mean=[0.485, 0.456, 0.406],
                              std=[0.229, 0.224, 0.225])
 
@@ -46,13 +51,13 @@ def get_data(dataset_dir, height, width, batch_size, workers):
         normalizer,
     ])
     train_loader = DataLoader(
-        HW_Dataset(train_filepath, train_csv_path, transform=train_transformer),
+        HW_Dataset(train_filepath, df_train, transform=train_transformer),
         batch_size=batch_size, num_workers=workers,
         shuffle=True, pin_memory=True, drop_last=False)
     #print(test_dataset)
 
     test_loader = DataLoader(
-        HW_Test_Dataset(test_filepath, test_csv_path, transform=test_transformer),
+        HW_Test_Dataset(test_filepath, df_test, transform=test_transformer),
         batch_size=batch_size, num_workers=workers,
         shuffle=False, pin_memory=True, drop_last=False)
     #

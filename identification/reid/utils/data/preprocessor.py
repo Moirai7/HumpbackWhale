@@ -5,14 +5,13 @@ import os
 from PIL import Image
 
 class HW_Dataset(object):
-    def __init__(self, filepath, csv_path=None, transform=None):
+    def __init__(self, filepath, csv, transform=None):
         self.file_path = filepath
-        self.df = pd.read_csv(csv_path)
+        self.df = csv
         self.transform = transform
-        self.image_list = [x for x in os.listdir(self.file_path)]
 
     def __len__(self):
-        return (len(self.image_list))
+        return (len(self.csv))
 
     def __getitem__(self, indices):
         if isinstance(indices, (tuple, list)):
@@ -35,14 +34,13 @@ class HW_Dataset(object):
         return imgs, new_label, label,index
 
 class HW_Test_Dataset(object):
-    def __init__(self, filepath, csv_path=None, transform=None):
+    def __init__(self, filepath, csv, transform=None):
         self.file_path = filepath
-        self.df = pd.read_csv(csv_path)
+        self.df = csv
         self.transform = transform
-        self.image_list = [x for x in os.listdir(self.file_path)]
 
     def __len__(self):
-        return (len(self.image_list))
+        return (len(self.csv))
 
     def __getitem__(self, indices):
         if isinstance(indices, (tuple, list)):

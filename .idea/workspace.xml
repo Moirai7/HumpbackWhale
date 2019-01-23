@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="dcb3f7f7-dbf6-4b30-948c-8d1a3c1f582c" name="Default" comment="" />
+    <list default="true" id="dcb3f7f7-dbf6-4b30-948c-8d1a3c1f582c" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/identification/loaddata.py" afterPath="$PROJECT_DIR$/identification/loaddata.py" />
+      <change beforePath="$PROJECT_DIR$/identification/reid/utils/data/preprocessor.py" afterPath="$PROJECT_DIR$/identification/reid/utils/data/preprocessor.py" />
+      <change beforePath="$PROJECT_DIR$/identification/test112.py" afterPath="$PROJECT_DIR$/identification/test112.py" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -18,8 +22,8 @@
       <file leaf-file-name="loaddata.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/identification/loaddata.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="54" column="47" lean-forward="false" selection-start-line="54" selection-start-column="44" selection-end-line="54" selection-end-column="47" />
+            <state relative-caret-position="73">
+              <caret line="53" column="38" lean-forward="false" selection-start-line="53" selection-start-column="38" selection-end-line="53" selection-end-column="38" />
               <folding>
                 <element signature="e#0#54#0" expanded="true" />
               </folding>
@@ -79,11 +83,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="test112.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="test112.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/identification/test112.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="184">
-              <caret line="8" column="9" lean-forward="true" selection-start-line="8" selection-start-column="9" selection-end-line="8" selection-end-column="9" />
+            <state relative-caret-position="115">
+              <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="9" selection-end-column="56" />
               <folding>
                 <element signature="e#0#12#0" expanded="true" />
               </folding>
@@ -111,11 +115,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="preprocessor.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="preprocessor.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/identification/reid/utils/data/preprocessor.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="78">
-              <caret line="9" column="39" lean-forward="true" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="39" />
+            <state relative-caret-position="260">
+              <caret line="43" column="0" lean-forward="true" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
               <folding>
                 <element signature="e#0#38#0" expanded="true" />
               </folding>
@@ -179,11 +183,11 @@
         <option value="$PROJECT_DIR$/convert_model_to_app.py" />
         <option value="$PROJECT_DIR$/identification/convert_model_to_app.py" />
         <option value="$PROJECT_DIR$/identification/reid/trainers_partloss.py" />
-        <option value="$PROJECT_DIR$/identification/loaddata.py" />
-        <option value="$PROJECT_DIR$/identification/reid/utils/data/preprocessor.py" />
         <option value="$PROJECT_DIR$/identification/reid/evaluators.py" />
         <option value="$PROJECT_DIR$/test112.py" />
         <option value="$PROJECT_DIR$/identification/test112.py" />
+        <option value="$PROJECT_DIR$/identification/loaddata.py" />
+        <option value="$PROJECT_DIR$/identification/reid/utils/data/preprocessor.py" />
       </list>
     </option>
   </component>
@@ -225,6 +229,27 @@
               <item name="HumpbackWhale" type="b2602c69:ProjectViewProjectNode" />
               <item name="HumpbackWhale" type="462c0819:PsiDirectoryNode" />
               <item name="identification" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="HumpbackWhale" type="b2602c69:ProjectViewProjectNode" />
+              <item name="HumpbackWhale" type="462c0819:PsiDirectoryNode" />
+              <item name="identification" type="462c0819:PsiDirectoryNode" />
+              <item name="reid" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="HumpbackWhale" type="b2602c69:ProjectViewProjectNode" />
+              <item name="HumpbackWhale" type="462c0819:PsiDirectoryNode" />
+              <item name="identification" type="462c0819:PsiDirectoryNode" />
+              <item name="reid" type="462c0819:PsiDirectoryNode" />
+              <item name="utils" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="HumpbackWhale" type="b2602c69:ProjectViewProjectNode" />
+              <item name="HumpbackWhale" type="462c0819:PsiDirectoryNode" />
+              <item name="identification" type="462c0819:PsiDirectoryNode" />
+              <item name="reid" type="462c0819:PsiDirectoryNode" />
+              <item name="utils" type="462c0819:PsiDirectoryNode" />
+              <item name="data" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -372,7 +397,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/identification/loaddata.py</url>
-          <line>111</line>
+          <line>116</line>
         </line-breakpoint>
       </breakpoints>
       <option name="time" value="1" />
@@ -764,10 +789,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/identification/test112.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="115">
+          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="9" selection-end-column="56" />
+          <folding>
+            <element signature="e#0#12#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/identification/loaddata.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="54" column="47" lean-forward="false" selection-start-line="54" selection-start-column="44" selection-end-line="54" selection-end-column="47" />
+        <state relative-caret-position="73">
+          <caret line="53" column="38" lean-forward="false" selection-start-line="53" selection-start-column="38" selection-end-line="53" selection-end-column="38" />
           <folding>
             <element signature="e#0#54#0" expanded="true" />
           </folding>
@@ -784,20 +819,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/identification/reid/utils/data/preprocessor.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="78">
-          <caret line="9" column="39" lean-forward="true" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="39" />
+        <state relative-caret-position="260">
+          <caret line="43" column="0" lean-forward="true" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
           <folding>
             <element signature="e#0#38#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/identification/test112.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="8" column="9" lean-forward="true" selection-start-line="8" selection-start-column="9" selection-end-line="8" selection-end-column="9" />
-          <folding>
-            <element signature="e#0#12#0" expanded="true" />
           </folding>
         </state>
       </provider>
