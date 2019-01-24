@@ -80,11 +80,8 @@ class Trainer(BaseTrainer):
         outputs = self.model(*inputs)
         index = (targets-751).data.nonzero().squeeze_()
         predict = outputs[1][1].data
-        #print(predict)
-       # print(outputs[1][1])
-       # print(outputs[1][1].size())
-       prec, = accuracy(predict.data,targets.data)
-       prec = prec.item()
+        prec, = accuracy(predict.data, targets.data)
+        prec = prec.item()
         if isinstance(self.criterion, torch.nn.CrossEntropyLoss):
             loss0 = self.criterion(outputs[1][0],targets)
             loss1 = self.criterion(outputs[1][1],targets)
