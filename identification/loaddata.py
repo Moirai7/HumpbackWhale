@@ -153,6 +153,8 @@ def  main(args):
                                 weight_decay=args.weight_decay,
                                 nesterov=True)
 
+    torch.save(model,"new_model.pth")
+    model = torch.load("new_model.pth")
     # Trainer
     trainer = Trainer(model, criterion, 0, 0, SMLoss_mode=0)
 
