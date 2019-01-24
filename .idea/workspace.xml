@@ -2,103 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dcb3f7f7-dbf6-4b30-948c-8d1a3c1f582c" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitattributes" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/HumpbackWhale.iml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/HumpbackWhale/HumpbackWhale.xcodeproj/project.pbxproj" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/HumpbackWhale/HumpbackWhale.xcodeproj/project.xcworkspace/contents.xcworkspacedata" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/HumpbackWhale/HumpbackWhale.xcodeproj/project.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/HumpbackWhale/HumpbackWhale.xcodeproj/project.xcworkspace/xcuserdata/emma.xcuserdatad/UserInterfaceState.xcuserstate" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/HumpbackWhale/HumpbackWhale.xcodeproj/xcuserdata/emma.xcuserdatad/xcschemes/xcschememanagement.plist" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/HumpbackWhale/HumpbackWhale/AppDelegate.swift" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/HumpbackWhale/HumpbackWhale/Assets.xcassets/AppIcon.appiconset/Contents.json" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/HumpbackWhale/HumpbackWhale/Assets.xcassets/Contents.json" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/HumpbackWhale/HumpbackWhale/Base.lproj/LaunchScreen.storyboard" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/HumpbackWhale/HumpbackWhale/Base.lproj/Main.storyboard" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/HumpbackWhale/HumpbackWhale/Info.plist" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/HumpbackWhale/HumpbackWhale/UIImage+PixelBuffer.swift" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/HumpbackWhale/HumpbackWhale/ViewController.swift" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/HumpbackWhale/HumpbackWhaleTests/HumpbackWhaleTests.swift" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/HumpbackWhale/HumpbackWhaleTests/Info.plist" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/HumpbackWhale/HumpbackWhaleUITests/HumpbackWhaleUITests.swift" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/HumpbackWhale/HumpbackWhaleUITests/Info.plist" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/README.md" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/identification/.gitattributes" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/identification/PCB.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/identification/RPP.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/identification/checkpoint.pth.tar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/identification/convert_model_to_app.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/identification/label.csv" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/identification/loaddata.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/identification/logs/humpbackWhale/checkpoint.pth.tar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/identification/logs/humpbackWhale/log.txt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/identification/logs/humpbackWhale/model_best.pth.tar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/identification/logs/market-1501/PCB/log.txt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/identification/model.pth" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/identification/model.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/identification/newtrain.csv" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/identification/reid/.evaluators.py.swp" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/identification/reid/__init__.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/identification/reid/datasets/HumpbackWhale.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/identification/reid/datasets/__init__.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/identification/reid/datasets/duke.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/identification/reid/datasets/market.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/identification/reid/evaluation_metrics/__init__.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/identification/reid/evaluation_metrics/classification.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/identification/reid/evaluation_metrics/ranking.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/identification/reid/evaluators.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/identification/reid/feature_extraction/__init__.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/identification/reid/feature_extraction/cnn.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/identification/reid/feature_extraction/database.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/identification/reid/models/.resnet.py.swo" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/identification/reid/models/.resnet_mask.py.swo" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/identification/reid/models/__init__.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/identification/reid/models/resnet.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/identification/reid/models/resnet_rpp.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/identification/reid/trainers_partloss.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/identification/reid/utils/__init__.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/identification/reid/utils/data/__init__.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/identification/reid/utils/data/dataset.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/identification/reid/utils/data/preprocessor.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/identification/reid/utils/data/sampler.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/identification/reid/utils/data/transforms.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/identification/reid/utils/logging.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/identification/reid/utils/meters.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/identification/reid/utils/osutils.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/identification/reid/utils/progress/LICENSE" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/identification/reid/utils/progress/MANIFEST.in" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/identification/reid/utils/progress/README.rst" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/identification/reid/utils/progress/progress/__init__.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/identification/reid/utils/progress/progress/bar.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/identification/reid/utils/progress/progress/counter.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/identification/reid/utils/progress/progress/helpers.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/identification/reid/utils/progress/progress/spinner.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/identification/reid/utils/progress/setup.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/identification/reid/utils/progress/test_progress.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/identification/reid/utils/serialization.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/identification/sample_submission.csv" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/identification/save_test.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/identification/test.csv" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/identification/test.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/identification/test112.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/identification/train.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/identification/train_PCB.sh" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/identification/train_RPP.sh" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/identification/train_result_mat.sh" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/identification/validation.csv" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/label.csv" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/preprocess/.gitattributes" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/preprocess/augment.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/preprocess/label.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/preprocess/requirement.sh" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/preprocess/slice.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/preprocess/whale_precut.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/result.csv" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/test.csv" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/identification/loaddata.py" afterPath="$PROJECT_DIR$/identification/loaddata.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -113,11 +18,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="450">
-      <file leaf-file-name="loaddata.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="augment.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/preprocess/augment.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="437">
+              <caret line="19" column="25" lean-forward="false" selection-start-line="19" selection-start-column="25" selection-end-line="19" selection-end-column="25" />
+              <folding>
+                <element signature="e#0#10#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="loaddata.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/identification/loaddata.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="211">
-              <caret line="126" column="22" lean-forward="true" selection-start-line="126" selection-start-column="22" selection-end-line="126" selection-end-column="22" />
+            <state relative-caret-position="573">
+              <caret line="182" column="35" lean-forward="true" selection-start-line="182" selection-start-column="35" selection-end-line="182" selection-end-column="35" />
               <folding>
                 <element signature="e#0#54#0" expanded="true" />
               </folding>
@@ -125,99 +42,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="dataset.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/identification/reid/utils/data/dataset.py">
+      <file leaf-file-name="label.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/preprocess/label.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="69">
+              <caret line="3" column="42" lean-forward="false" selection-start-line="3" selection-start-column="42" selection-end-line="3" selection-end-column="42" />
               <folding>
-                <element signature="e#0#37#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="trainers_partloss.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/identification/reid/trainers_partloss.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="23">
-              <caret line="71" column="31" lean-forward="false" selection-start-line="71" selection-start-column="31" selection-end-line="71" selection-end-column="31" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="train_PCB.sh" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/identification/train_PCB.sh">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="212" lean-forward="false" selection-start-line="0" selection-start-column="212" selection-end-line="0" selection-end-column="212" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="HumpbackWhale.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/identification/reid/datasets/HumpbackWhale.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="36">
-              <caret line="24" column="16" lean-forward="false" selection-start-line="24" selection-start-column="16" selection-end-line="24" selection-end-column="16" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="evaluators.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/identification/reid/evaluators.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="113" column="11" lean-forward="false" selection-start-line="113" selection-start-column="11" selection-end-line="113" selection-end-column="11" />
-              <folding>
-                <element signature="e#0#54#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="test112.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/identification/test112.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="230">
-              <caret line="10" column="14" lean-forward="true" selection-start-line="10" selection-start-column="14" selection-end-line="10" selection-end-column="14" />
-              <folding>
-                <element signature="e#0#12#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="builtins.py" pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/.PyCharm2017.3/system/python_stubs/152262123/builtins.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="456">
-              <caret line="2941" column="6" lean-forward="false" selection-start-line="2941" selection-start-column="6" selection-end-line="2941" selection-end-column="15" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="model.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/identification/model.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="138">
-              <caret line="21" column="13" lean-forward="false" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="43" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="preprocessor.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/identification/reid/utils/data/preprocessor.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="21" column="33" lean-forward="true" selection-start-line="21" selection-start-column="33" selection-end-line="21" selection-end-column="33" />
-              <folding>
-                <element signature="e#0#38#0" expanded="true" />
+                <element signature="e#0#18#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -234,8 +65,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>evaluate</find>
-      <find>module</find>
       <find>Trainer</find>
       <find>inputs</find>
       <find>256</find>
@@ -244,7 +73,6 @@
       <find>pd</find>
       <find>HW_Dataset</find>
       <find>num_classes</find>
-      <find>print</find>
       <find>size</find>
       <find>lr</find>
       <find>df</find>
@@ -264,6 +92,9 @@
       <find>HW_Test_Dataset</find>
       <find>OrderedDict</find>
       <find>csv</find>
+      <find>num_class</find>
+      <find>print</find>
+      <find>logs_dir</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -277,13 +108,13 @@
         <option value="$PROJECT_DIR$/identification/reid/evaluation_metrics/ranking.py" />
         <option value="$PROJECT_DIR$/convert_model_to_app.py" />
         <option value="$PROJECT_DIR$/identification/convert_model_to_app.py" />
-        <option value="$PROJECT_DIR$/identification/reid/trainers_partloss.py" />
         <option value="$PROJECT_DIR$/identification/reid/evaluators.py" />
         <option value="$PROJECT_DIR$/test112.py" />
-        <option value="$PROJECT_DIR$/identification/loaddata.py" />
         <option value="$PROJECT_DIR$/identification/test112.py" />
         <option value="$PROJECT_DIR$/identification/train_PCB.sh" />
         <option value="$PROJECT_DIR$/identification/reid/utils/data/preprocessor.py" />
+        <option value="$PROJECT_DIR$/identification/reid/trainers_partloss.py" />
+        <option value="$PROJECT_DIR$/identification/loaddata.py" />
       </list>
     </option>
   </component>
@@ -294,10 +125,10 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1911" />
+    <option name="x" value="-9" />
     <option name="y" value="-9" />
-    <option name="width" value="1618" />
-    <option name="height" value="880" />
+    <option name="width" value="1938" />
+    <option name="height" value="1098" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -329,23 +160,7 @@
             <path>
               <item name="HumpbackWhale" type="b2602c69:ProjectViewProjectNode" />
               <item name="HumpbackWhale" type="462c0819:PsiDirectoryNode" />
-              <item name="identification" type="462c0819:PsiDirectoryNode" />
-              <item name="reid" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="HumpbackWhale" type="b2602c69:ProjectViewProjectNode" />
-              <item name="HumpbackWhale" type="462c0819:PsiDirectoryNode" />
-              <item name="identification" type="462c0819:PsiDirectoryNode" />
-              <item name="reid" type="462c0819:PsiDirectoryNode" />
-              <item name="utils" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="HumpbackWhale" type="b2602c69:ProjectViewProjectNode" />
-              <item name="HumpbackWhale" type="462c0819:PsiDirectoryNode" />
-              <item name="identification" type="462c0819:PsiDirectoryNode" />
-              <item name="reid" type="462c0819:PsiDirectoryNode" />
-              <item name="utils" type="462c0819:PsiDirectoryNode" />
-              <item name="data" type="462c0819:PsiDirectoryNode" />
+              <item name="preprocess" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -358,7 +173,7 @@
   <component name="PropertiesComponent">
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="D:/PCB_RPP_for_reID-master" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -444,42 +259,29 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1911" y="-9" width="1618" height="880" extended-state="6" />
+    <frame x="-9" y="-9" width="1938" height="1060" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32947975" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.11532847" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23890339" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20896329" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="SciView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32947975" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20572354" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="SciView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -493,7 +295,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/identification/loaddata.py</url>
-          <line>116</line>
+          <line>122</line>
         </line-breakpoint>
       </breakpoints>
       <option name="time" value="1" />
@@ -501,29 +303,10 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/identification/reid/evaluators.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="61" column="31" lean-forward="false" selection-start-line="61" selection-start-column="31" selection-end-line="61" selection-end-column="31" />
-          <folding>
-            <element signature="e#0#54#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/identification/reid/models/resnet.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="22" column="26" lean-forward="false" selection-start-line="22" selection-start-column="26" selection-end-line="22" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/.PyCharm2017.3/system/python_stubs/152262123/PyQt4/QtOpenGL.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="277">
           <caret line="72" column="8" lean-forward="false" selection-start-line="72" selection-start-column="8" selection-end-line="72" selection-end-column="8" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -569,9 +352,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
           <caret line="24" column="0" lean-forward="true" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#54#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -589,7 +369,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1541">
           <caret line="76" column="30" lean-forward="false" selection-start-line="76" selection-start-column="30" selection-end-line="76" selection-end-column="30" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -604,7 +383,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="368">
           <caret line="24" column="16" lean-forward="false" selection-start-line="24" selection-start-column="16" selection-end-line="24" selection-end-column="16" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -626,9 +404,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="943">
           <caret line="49" column="19" lean-forward="true" selection-start-line="49" selection-start-column="19" selection-end-line="49" selection-end-column="19" />
-          <folding>
-            <element signature="e#0#54#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -636,7 +411,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1725">
           <caret line="81" column="4" lean-forward="false" selection-start-line="81" selection-start-column="4" selection-end-line="81" selection-end-column="4" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -644,9 +418,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1081">
           <caret line="51" column="0" lean-forward="false" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#38#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -654,7 +425,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="138">
           <caret line="21" column="19" lean-forward="false" selection-start-line="21" selection-start-column="19" selection-end-line="21" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -672,7 +442,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="851">
           <caret line="46" column="29" lean-forward="true" selection-start-line="46" selection-start-column="29" selection-end-line="46" selection-end-column="29" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -687,7 +456,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="621">
           <caret line="35" column="0" lean-forward="true" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -709,9 +477,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="690">
           <caret line="38" column="0" lean-forward="true" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#54#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -719,7 +484,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3611">
           <caret line="163" column="13" lean-forward="false" selection-start-line="163" selection-start-column="13" selection-end-line="163" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -727,9 +491,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="138">
           <caret line="10" column="34" lean-forward="true" selection-start-line="10" selection-start-column="34" selection-end-line="10" selection-end-column="34" />
-          <folding>
-            <element signature="e#0#38#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -737,7 +498,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="23">
           <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="20" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -746,13 +506,6 @@
         <state relative-caret-position="-137">
           <caret line="449" column="8" lean-forward="false" selection-start-line="449" selection-start-column="8" selection-end-line="449" selection-end-column="8" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/identification/reid/evaluation_metrics/classification.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="7" column="17" lean-forward="false" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
         </state>
       </provider>
     </entry>
@@ -767,7 +520,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1725">
           <caret line="81" column="4" lean-forward="false" selection-start-line="81" selection-start-column="4" selection-end-line="81" selection-end-column="4" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -792,21 +544,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/identification/reid/models/resnet.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3795">
-          <caret line="171" column="31" lean-forward="false" selection-start-line="171" selection-start-column="31" selection-end-line="171" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/identification/convert_model_to_app.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="308">
           <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#54#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -814,7 +555,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="172">
           <caret line="72" column="8" lean-forward="false" selection-start-line="72" selection-start-column="8" selection-end-line="72" selection-end-column="8" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -822,15 +562,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-391">
           <caret line="19" column="4" lean-forward="false" selection-start-line="19" selection-start-column="4" selection-end-line="19" selection-end-column="4" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$USER_HOME$/.PyCharm2017.3/system/python_stubs/152262123/builtins.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="456">
+        <state relative-caret-position="67643">
           <caret line="2941" column="6" lean-forward="false" selection-start-line="2941" selection-start-column="6" selection-end-line="2941" selection-end-column="15" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -838,7 +576,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="138">
           <caret line="21" column="13" lean-forward="false" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="43" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -846,33 +583,20 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="69">
           <caret line="9" column="4" lean-forward="false" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/identification/reid/trainers_partloss.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23">
-          <caret line="71" column="31" lean-forward="false" selection-start-line="71" selection-start-column="31" selection-end-line="71" selection-end-column="31" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/identification/reid/evaluators.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
+        <state relative-caret-position="2392">
           <caret line="113" column="11" lean-forward="false" selection-start-line="113" selection-start-column="11" selection-end-line="113" selection-end-column="11" />
-          <folding>
-            <element signature="e#0#54#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/identification/reid/datasets/HumpbackWhale.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
+        <state relative-caret-position="368">
           <caret line="24" column="16" lean-forward="false" selection-start-line="24" selection-start-column="16" selection-end-line="24" selection-end-column="16" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -880,46 +604,77 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#37#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/identification/loaddata.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="211">
-          <caret line="126" column="22" lean-forward="true" selection-start-line="126" selection-start-column="22" selection-end-line="126" selection-end-column="22" />
-          <folding>
-            <element signature="e#0#54#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/identification/test112.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="10" column="14" lean-forward="true" selection-start-line="10" selection-start-column="14" selection-end-line="10" selection-end-column="14" />
-          <folding>
-            <element signature="e#0#12#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/identification/train_PCB.sh">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="212" lean-forward="false" selection-start-line="0" selection-start-column="212" selection-end-line="0" selection-end-column="212" />
-          <folding />
+          <caret line="0" column="216" lean-forward="false" selection-start-line="0" selection-start-column="216" selection-end-line="0" selection-end-column="216" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/identification/test112.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="10" column="11" lean-forward="false" selection-start-line="10" selection-start-column="11" selection-end-line="10" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/preprocess/label.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="69">
+          <caret line="3" column="42" lean-forward="false" selection-start-line="3" selection-start-column="42" selection-end-line="3" selection-end-column="42" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/identification/reid/utils/data/preprocessor.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="21" column="33" lean-forward="true" selection-start-line="21" selection-start-column="33" selection-end-line="21" selection-end-column="33" />
+        <state relative-caret-position="458">
+          <caret line="48" column="33" lean-forward="false" selection-start-line="48" selection-start-column="33" selection-end-line="48" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/identification/reid/evaluation_metrics/classification.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="69">
+          <caret line="5" column="4" lean-forward="false" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/identification/reid/models/resnet.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1288">
+          <caret line="43" column="22" lean-forward="false" selection-start-line="43" selection-start-column="22" selection-end-line="43" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/identification/reid/trainers_partloss.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="244">
+          <caret line="83" column="26" lean-forward="true" selection-start-line="83" selection-start-column="26" selection-end-line="83" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/preprocess/augment.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="437">
+          <caret line="19" column="25" lean-forward="false" selection-start-line="19" selection-start-column="25" selection-end-line="19" selection-end-column="25" />
           <folding>
-            <element signature="e#0#38#0" expanded="true" />
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/identification/loaddata.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="573">
+          <caret line="182" column="35" lean-forward="true" selection-start-line="182" selection-start-column="35" selection-end-line="182" selection-end-column="35" />
+          <folding>
+            <element signature="e#0#54#0" expanded="true" />
           </folding>
         </state>
       </provider>

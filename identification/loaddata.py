@@ -26,10 +26,11 @@ from reid.utils.serialization import load_checkpoint, save_checkpoint
 def get_data(dataset_dir, height, width, batch_size, workers):
 
     train_filepath = osp.join(dataset_dir,'train/')
-    train_csv_path = osp.join(dataset_dir,'label.csv')
+    train_csv_path = osp.join(dataset_dir,'newlabel.csv')
     test_filepath = osp.join(dataset_dir,'test/')
     test_csv_path = osp.join(dataset_dir,'test.csv')
 
+<<<<<<< HEAD
     df_test = pd.read_csv("../dataset/label1.csv")
     df_train = pd.read_csv("../dataset/label2.csv")
     #df = df.sample(frac=1)
@@ -40,6 +41,18 @@ def get_data(dataset_dir, height, width, batch_size, workers):
     #df_test =pd.read_csv("label1.csv")
     #df_train = pd.read_csv("label2.csv")
     print(df_test,df_train)
+=======
+    # df = pd.read_csv("../newdataset/newlabel.csv")
+    # df = df.sample(frac=1)
+    # cut_idx = int(round(0.2 * df.shape[0]))
+    # df_test, df_train = df.iloc[:cut_idx], df.iloc[cut_idx:]
+    # df_test.to_csv("label1.csv",index=0)
+    # df_train.to_csv("label2.csv",index =0)
+    # df_test =pd.read_csv("label1.csv")
+    # df_train = pd.read_csv("label2.csv")
+    #print(df_test,df_train)
+
+>>>>>>> 140e0298b491f2a62166efced404757144b5a7b4
     normalizer = T.Normalize(mean=[0.485, 0.456, 0.406],
                              std=[0.229, 0.224, 0.225])
 
@@ -56,13 +69,13 @@ def get_data(dataset_dir, height, width, batch_size, workers):
         normalizer,
     ])
     train_loader = DataLoader(
-        HW_Dataset(train_filepath, df_train, transform=train_transformer),
+        HW_Dataset(train_filepath,train_csv_path, transform=train_transformer),
         batch_size=batch_size, num_workers=workers,
-        shuffle=False, pin_memory=True, drop_last=False)
+        shuffle=True, pin_memory=True, drop_last=False)
     #print(test_dataset)
 
     test_loader = DataLoader(
-        HW_Test_Dataset(train_filepath, df_test, transform=test_transformer),
+        HW_Test_Dataset(test_filepath, test_csv_path, transform=test_transformer),
         batch_size=batch_size, num_workers=workers,
         shuffle=False, pin_memory=True, drop_last=False)
     #
@@ -70,9 +83,9 @@ def get_data(dataset_dir, height, width, batch_size, workers):
     #     HW_Dataset(test_filepath, csv_path, transform=test_transformer),
     #     batch_size=batch_size, num_workers=workers,
     #     shuffle=False, pin_memory=True)
+    #num_classes = df_test['Id'].drop_duplicates()
 
-
-    return train_loader, test_loader#, gallery_loader
+    return train_loader, test_loader#, len(num_classes)#, gallery_loader
 
 
 def  main(args):
@@ -81,7 +94,7 @@ def  main(args):
     # print(num_classes)
     num_classes = 4056
     #os.environ["CUDA_VISIBLE_DEVICES"] = "0"
-
+    #num_classes
     #device_ids = [0, 1, 2, 3]
     np.random.seed(args.seed)
     torch.manual_seed(args.seed)
@@ -102,7 +115,8 @@ def  main(args):
                  args.width, args.batch_size, args.workers,
                  )   #, test_loader
 
-
+    print(num_classes)
+    #num_classes = num_classes
     # Create model
     model = models.create(args.arch, num_features=args.features,
                           dropout=args.dropout, num_classes=num_classes,cut_at_pooling=False, FCN=True)
@@ -152,6 +166,8 @@ def  main(args):
                                 weight_decay=args.weight_decay,
                                 nesterov=True)
 
+    torch.save(model,"new_model.pth")
+    model = torch.load("new_model.pth")
     # Trainer
     trainer = Trainer(model, criterion, 0, 0, SMLoss_mode=0)
 
@@ -163,15 +179,15 @@ def  main(args):
             g['lr'] = lr * g.get('lr_mult', 1)#if lr_mult do not find,return defualt value 1
 
     #Start training
-    for epoch in range(start_epoch, args.epochs):
-        adjust_lr(epoch)
-        trainer.train(epoch, train_loader, optimizer)
-        is_best = True
-        save_checkpoint({
-            'state_dict': model.module.state_dict(),
-            'epoch': epoch + 1,
-            'best_top1': best_top1,
-        }, is_best, fpath=osp.join(args.logs_dir, 'checkpoint.pth.tar'))
+    # for epoch in range(start_epoch, args.epochs):
+    #     adjust_lr(epoch)
+    #     trainer.train(epoch, train_loader, optimizer)
+    #     is_best = True
+    #     save_checkpoint({
+    #         'state_dict': model.module.state_dict(),
+    #         'epoch': epoch + 1,
+    #         'best_top1': best_top1,
+    #     }, is_best, fpath=osp.join(args.logs_dir, 'checkpoint.pth.tar'))
 
     # Final test
     print('Test with best model:')
