@@ -4,12 +4,14 @@ from ..utils import to_torch
 
 
 def accuracy(output, target, topk=(1,)):
+    #print(len(output),len(target))
     output, target = to_torch(output), to_torch(target)
     maxk = max(topk)
     batch_size = target.size(0)
 
     _, pred = output.topk(maxk, 1, True, True)
     pred = pred.t()
+    #print(len(pred),len(target))
     correct = pred.eq(target.view(1, -1).expand_as(pred))
 
     ret = []

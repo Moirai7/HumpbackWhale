@@ -79,7 +79,12 @@ class Trainer(BaseTrainer):
     def _forward(self, inputs, targets):
         outputs = self.model(*inputs)
         index = (targets-751).data.nonzero().squeeze_()
-		
+        predict = outputs[1][1].data
+        #print(predict)
+       # print(outputs[1][1])
+       # print(outputs[1][1].size())
+       prec, = accuracy(predict.data,targets.data)
+       prec = prec.item()
         if isinstance(self.criterion, torch.nn.CrossEntropyLoss):
             loss0 = self.criterion(outputs[1][0],targets)
             loss1 = self.criterion(outputs[1][1],targets)
@@ -89,14 +94,18 @@ class Trainer(BaseTrainer):
             # loss5 = self.criterion(outputs[1][5],targets)
             # loss6 = self.criterion(outputs[1][6], targets)
             # loss7 = self.criterion(outputs[1][7], targets)
-            prec, = accuracy(outputs[1][1].data, targets.data)
+            #print("-----")
+            #print(predict)
+            #print(outputs[1][0].size())
+            #print(len(outputs[1][0].data),outputs[1][0],outputs[1][0].data,len(outputs[1][1].data),len(targets.data))
+            #prec, = accuracy(predict.data, targets.data)
 
             # print(outputs[1][0],len(outputs[1][0]))
             # print(targets.data)
             # print(prec)
             # print(loss0,loss1.data)
 
-            prec = prec.item()
+            #prec = prec.item()
                         
         elif isinstance(self.criterion, OIMLoss):
             loss, outputs = self.criterion(outputs, targets)

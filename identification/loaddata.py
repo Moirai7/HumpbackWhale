@@ -26,11 +26,11 @@ from reid.utils.serialization import load_checkpoint, save_checkpoint
 def get_data(dataset_dir, height, width, batch_size, workers):
 
     train_filepath = osp.join(dataset_dir,'train/')
-    train_csv_path = osp.join(dataset_dir,'label.csv')
-    test_filepath = osp.join(dataset_dir,'test/')
-    test_csv_path = osp.join(dataset_dir,'test.csv')
+    train_csv_path = osp.join(dataset_dir,'newlabel.csv')
+    #test_filepath = osp.join(dataset_dir,'test/')
+    #test_csv_path = osp.join(dataset_dir,'test.csv')
 
-    df = pd.read_csv("../dataset/label.csv")
+    df = pd.read_csv("../newdataset/newlabel.csv")
     df = df.sample(frac=1)
     cut_idx = int(round(0.2 * df.shape[0]))
     df_test, df_train = df.iloc[:cut_idx], df.iloc[cut_idx:]
@@ -58,7 +58,7 @@ def get_data(dataset_dir, height, width, batch_size, workers):
     train_loader = DataLoader(
         HW_Dataset(train_filepath, df_train, transform=train_transformer),
         batch_size=batch_size, num_workers=workers,
-        shuffle=False, pin_memory=True, drop_last=False)
+        shuffle=True, pin_memory=True, drop_last=False)
     #print(test_dataset)
 
     test_loader = DataLoader(
@@ -72,7 +72,7 @@ def get_data(dataset_dir, height, width, batch_size, workers):
     #     shuffle=False, pin_memory=True)
     num_classes = df_test['Id'].drop_duplicates()
 
-    return train_loader, test_loader, num_classes#, gallery_loader
+    return train_loader, test_loader, len(num_classes)#, gallery_loader
 
 
 def  main(args):
@@ -103,6 +103,7 @@ def  main(args):
                  )   #, test_loader
 
     print(num_classes)
+    num_classes = num_classes
     # Create model
     model = models.create(args.arch, num_features=args.features,
                           dropout=args.dropout, num_classes=num_classes,cut_at_pooling=False, FCN=True)
