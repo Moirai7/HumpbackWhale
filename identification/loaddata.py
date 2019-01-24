@@ -26,13 +26,12 @@ from reid.utils.serialization import load_checkpoint, save_checkpoint
 def get_data(dataset_dir, height, width, batch_size, workers):
 
     train_filepath = osp.join(dataset_dir,'train/')
-    train_csv_path = osp.join(dataset_dir,'newlabel.csv')
+    train_csv_path = osp.join(dataset_dir,'label.csv')
     test_filepath = osp.join(dataset_dir,'test/')
     test_csv_path = osp.join(dataset_dir,'test.csv')
 
-<<<<<<< HEAD
-    df_test = pd.read_csv("../dataset/label1.csv")
-    df_train = pd.read_csv("../dataset/label2.csv")
+    #df_test = pd.read_csv("../dataset/label1.csv")
+    #df_train = pd.read_csv("../dataset/label2.csv")
     #df = df.sample(frac=1)
     #cut_idx = int(round(0.2 * df.shape[0]))
     #df_test, df_train = df.iloc[:cut_idx], df.iloc[cut_idx:]
@@ -40,8 +39,7 @@ def get_data(dataset_dir, height, width, batch_size, workers):
     #df_train.to_csv("label2.csv",index =0)
     #df_test =pd.read_csv("label1.csv")
     #df_train = pd.read_csv("label2.csv")
-    print(df_test,df_train)
-=======
+    #print(df_test,df_train)=
     # df = pd.read_csv("../newdataset/newlabel.csv")
     # df = df.sample(frac=1)
     # cut_idx = int(round(0.2 * df.shape[0]))
@@ -52,7 +50,6 @@ def get_data(dataset_dir, height, width, batch_size, workers):
     # df_train = pd.read_csv("label2.csv")
     #print(df_test,df_train)
 
->>>>>>> 140e0298b491f2a62166efced404757144b5a7b4
     normalizer = T.Normalize(mean=[0.485, 0.456, 0.406],
                              std=[0.229, 0.224, 0.225])
 
@@ -92,7 +89,7 @@ def  main(args):
     # df = pd.read_csv('../dataset/label.csv')
     # num_classes = max(list(map(int,df.newId[1])))
     # print(num_classes)
-    num_classes = 4056
+    num_classes = 5005
     #os.environ["CUDA_VISIBLE_DEVICES"] = "0"
     #num_classes
     #device_ids = [0, 1, 2, 3]
@@ -191,7 +188,7 @@ def  main(args):
 
     # Final test
     print('Test with best model:')
-    checkpoint = load_checkpoint(osp.join(args.logs_dir, 'checkpoint.pth.tar'))
+    checkpoint = load_checkpoint(osp.join(args.logs_dir,'checkpoint.pth.tar'))
     model.module.load_state_dict(checkpoint['state_dict'])
     #torch.save(model, 'model.pth')
     # model1 = torch.load("model.pth")
@@ -214,9 +211,9 @@ if __name__ == '__main__':
                              "144 for inception")
     parser.add_argument('--width', type=int,
                         help="input width, default: 128 for resnet*, "
-                             "56 for inception")
+                        "56 for inception")
     parser.add_argument('--combine-trainval', action='store_true',
-                        help="train and val sets together for training, "
+            help="train and val sets together for training, "
                              "val set alone for validation")
     # model
     parser.add_argument('-a', '--arch', type=str, default='resnet50',
