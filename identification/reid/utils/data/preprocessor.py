@@ -7,7 +7,7 @@ from PIL import Image
 class HW_Dataset(object):
     def __init__(self, filepath, csv, transform=None):
         self.file_path = filepath
-        self.df = csv
+        self.df = pd.read_csv(csv)
         self.transform = transform
 
     def __len__(self):
@@ -42,7 +42,7 @@ class HW_Dataset(object):
 class HW_Test_Dataset(object):
     def __init__(self, filepath, csv, transform=None):
         self.file_path = filepath
-        self.df = csv
+        self.df = pd.read_csv(csv)
         self.transform = transform
 
     def __len__(self):
