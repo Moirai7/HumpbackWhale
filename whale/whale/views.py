@@ -8,9 +8,19 @@ from reid import models
 from torch.autograd import Variable
 import numpy as np
 import cv2
+import pandas as pd
 import os
 
 cuda = False
+voc = {}
+def readLabel():
+    lable = pd.read_csv('/root/HumpbackWhale/label.csv')
+    lable.drop_duplicates('newId',inplace=True)
+    for k, v in zip(lable['newId'],lable['Id']):
+         voc[k] = v
+
+readLabel()
+
 def find_new_img():
     dir = '/root/HumpbackWhale/whale/whale/static/uploads/test_pictures'
     file_lists = os.listdir(dir)
@@ -42,7 +52,7 @@ def predict():
     img = preprocess_image(cv2.imread(find_new_img(), 1))
     model = models.create('resnet50', num_features=256,
                           dropout=0.25, num_classes=5005,cut_at_pooling=False, FCN=True)
-    tar = torch.load('/root/HumpbackWhale/identification/checkpoint.pth.tar',map_location='cpu')
+    tar = torch.load('/root/HumpbackWhale/checkpoint.pth.tar',map_location='cpu')
     state_dict = tar['state_dict']
     from collections import OrderedDict
     new_state_dict = OrderedDict()
@@ -57,8 +67,10 @@ def predict():
     #model.load_state_dict(torch.load("/root/HumpbackWhale/identification/checkpoint.pth.tar",map_location='cpu'))
     if cuda:
         model = model.cuda()
-    
-    return torch.max(model(img)[1][0])
+    d  = model(img)
+    #return int(torch.max(model(img)[1][0][0], dim=0)[1].numpy())
+    return voc[int(torch.max(model(img)[1][0][0], dim=0)[1].numpy())]
+    #return torch.max(model(img)[1][0], dim=0)[1]
 
 @csrf_exempt 
 def index(request):
