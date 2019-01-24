@@ -7,16 +7,15 @@
 //
 
 import UIKit
-import CoreML
+//import CoreML
+import Alamofire
 
 class ViewController: UIViewController, UINavigationControllerDelegate  {
     
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var classifier: UILabel!
-    var model: Food101!
     
     override func viewWillAppear(_ animated: Bool) {
-        model = Food101()
     }
     
     override func viewDidLoad() {
@@ -66,9 +65,32 @@ extension ViewController: UIImagePickerControllerDelegate {
             fatalError("Expected a dictionary containing an image, but was provided the following: \(info)")
         }
         
-        processImage(image)
+        //processImage(image)
+        imageView.image = image.rescale(scaleSize:299/image.size.width)
+        uploadImage(image)
     }
     
+    func uploadImage(_ image: UIImage) {
+        classifier.text = "Analyzing Image..."
+        let imgData = image.jpegData(compressionQuality: 0.5)
+        var urlRequest = URLRequest(url: URL(string:"http://47.107.42.116:8000/save_profile/")!)
+        urlRequest.httpMethod = "POST"
+        
+        Alamofire.upload(multipartFormData: { multipartFormData in
+            multipartFormData.append(imgData!, withName: "picture",fileName: "file.jpg", mimeType: "image/jpg")
+        }, with: urlRequest, encodingCompletion: { result in
+            switch result {
+            case .success(let upload, _, _):
+                upload.responseString { response in
+                    self.classifier.text = "\(response.value ?? "Error") "
+                }
+            case .failure(let encodingError):
+                print(encodingError)
+            }
+        })
+        
+    }
+    /*
     func processImage(_ image: UIImage) {
         let size = CGSize(width: 299, height: 299)
         
@@ -85,7 +107,7 @@ extension ViewController: UIImagePickerControllerDelegate {
         
         imageView.image = image.rescale(scaleSize:299/image.size.width)
         classifier.text = "\(result.classLabel) - \(converted) %"
-    }
+    }*/
     
     /*func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         

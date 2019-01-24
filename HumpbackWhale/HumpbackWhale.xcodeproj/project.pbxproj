@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B5299B5921F9BE1500A75744 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5299B5821F9BE1500A75744 /* Alamofire.framework */; };
 		B5305ABC21F68B4100DBAAC9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5305ABB21F68B4100DBAAC9 /* AppDelegate.swift */; };
 		B5305ABE21F68B4100DBAAC9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5305ABD21F68B4100DBAAC9 /* ViewController.swift */; };
 		B5305AC121F68B4100DBAAC9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5305ABF21F68B4100DBAAC9 /* Main.storyboard */; };
@@ -14,8 +15,8 @@
 		B5305AC621F68B4200DBAAC9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5305AC421F68B4200DBAAC9 /* LaunchScreen.storyboard */; };
 		B5305AD121F68B4200DBAAC9 /* HumpbackWhaleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5305AD021F68B4200DBAAC9 /* HumpbackWhaleTests.swift */; };
 		B5305ADC21F68B4200DBAAC9 /* HumpbackWhaleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5305ADB21F68B4200DBAAC9 /* HumpbackWhaleUITests.swift */; };
-		B5305AEB21F68E2100DBAAC9 /* Food101.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = B5305AE921F68E0400DBAAC9 /* Food101.mlmodel */; };
 		B5305AED21F6BC8D00DBAAC9 /* UIImage+PixelBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5305AEC21F6BC8D00DBAAC9 /* UIImage+PixelBuffer.swift */; };
+		D35A2AD5F3CFFD831F0846F7 /* Pods_HumpbackWhale.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E4D2F30AA37E86D7AF6E7D8 /* Pods_HumpbackWhale.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6E4D2F30AA37E86D7AF6E7D8 /* Pods_HumpbackWhale.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HumpbackWhale.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7E31969C61C73DB14D6BD64A /* Pods-HumpbackWhale.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HumpbackWhale.release.xcconfig"; path = "Pods/Target Support Files/Pods-HumpbackWhale/Pods-HumpbackWhale.release.xcconfig"; sourceTree = "<group>"; };
+		B5299B5821F9BE1500A75744 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5305AB821F68B4100DBAAC9 /* HumpbackWhale.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HumpbackWhale.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5305ABB21F68B4100DBAAC9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B5305ABD21F68B4100DBAAC9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -49,8 +53,8 @@
 		B5305AD721F68B4200DBAAC9 /* HumpbackWhaleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HumpbackWhaleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5305ADB21F68B4200DBAAC9 /* HumpbackWhaleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HumpbackWhaleUITests.swift; sourceTree = "<group>"; };
 		B5305ADD21F68B4200DBAAC9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B5305AE921F68E0400DBAAC9 /* Food101.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Food101.mlmodel; sourceTree = "<group>"; };
 		B5305AEC21F6BC8D00DBAAC9 /* UIImage+PixelBuffer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+PixelBuffer.swift"; sourceTree = "<group>"; };
+		DB24A46D4A53CACE0E5C5923 /* Pods-HumpbackWhale.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HumpbackWhale.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HumpbackWhale/Pods-HumpbackWhale.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +62,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B5299B5921F9BE1500A75744 /* Alamofire.framework in Frameworks */,
+				D35A2AD5F3CFFD831F0846F7 /* Pods_HumpbackWhale.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +84,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9F28857428AD4314415115DE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DB24A46D4A53CACE0E5C5923 /* Pods-HumpbackWhale.debug.xcconfig */,
+				7E31969C61C73DB14D6BD64A /* Pods-HumpbackWhale.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		B5299B5721F9BE1500A75744 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B5299B5821F9BE1500A75744 /* Alamofire.framework */,
+				6E4D2F30AA37E86D7AF6E7D8 /* Pods_HumpbackWhale.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		B5305AAF21F68B4100DBAAC9 = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +109,8 @@
 				B5305ACF21F68B4200DBAAC9 /* HumpbackWhaleTests */,
 				B5305ADA21F68B4200DBAAC9 /* HumpbackWhaleUITests */,
 				B5305AB921F68B4100DBAAC9 /* Products */,
+				B5299B5721F9BE1500A75744 /* Frameworks */,
+				9F28857428AD4314415115DE /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -102,7 +128,6 @@
 			isa = PBXGroup;
 			children = (
 				B5305AEC21F6BC8D00DBAAC9 /* UIImage+PixelBuffer.swift */,
-				B5305AE921F68E0400DBAAC9 /* Food101.mlmodel */,
 				B5305ABB21F68B4100DBAAC9 /* AppDelegate.swift */,
 				B5305ABD21F68B4100DBAAC9 /* ViewController.swift */,
 				B5305ABF21F68B4100DBAAC9 /* Main.storyboard */,
@@ -138,9 +163,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B5305AE021F68B4200DBAAC9 /* Build configuration list for PBXNativeTarget "HumpbackWhale" */;
 			buildPhases = (
+				20A83DC6F6CBF4BAB2B7808E /* [CP] Check Pods Manifest.lock */,
 				B5305AB421F68B4100DBAAC9 /* Sources */,
 				B5305AB521F68B4100DBAAC9 /* Frameworks */,
 				B5305AB621F68B4100DBAAC9 /* Resources */,
+				08E88D742E9B88BE07EB0AAC /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -257,13 +284,59 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		08E88D742E9B88BE07EB0AAC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-HumpbackWhale/Pods-HumpbackWhale-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HumpbackWhale/Pods-HumpbackWhale-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		20A83DC6F6CBF4BAB2B7808E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HumpbackWhale-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		B5305AB421F68B4100DBAAC9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				B5305AED21F6BC8D00DBAAC9 /* UIImage+PixelBuffer.swift in Sources */,
-				B5305AEB21F68E2100DBAAC9 /* Food101.mlmodel in Sources */,
 				B5305ABE21F68B4100DBAAC9 /* ViewController.swift in Sources */,
 				B5305ABC21F68B4100DBAAC9 /* AppDelegate.swift in Sources */,
 			);
@@ -438,6 +511,7 @@
 		};
 		B5305AE121F68B4200DBAAC9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DB24A46D4A53CACE0E5C5923 /* Pods-HumpbackWhale.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -457,6 +531,7 @@
 		};
 		B5305AE221F68B4200DBAAC9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7E31969C61C73DB14D6BD64A /* Pods-HumpbackWhale.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
