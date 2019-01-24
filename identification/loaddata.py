@@ -38,7 +38,8 @@ def get_data(dataset_dir, height, width, batch_size, workers):
     df_train.to_csv("label2.csv",index =0)
     df_test =pd.read_csv("label1.csv")
     df_train = pd.read_csv("label2.csv")
-    print(df_test,df_train)
+    #print(df_test,df_train)
+
     normalizer = T.Normalize(mean=[0.485, 0.456, 0.406],
                              std=[0.229, 0.224, 0.225])
 
@@ -69,16 +70,16 @@ def get_data(dataset_dir, height, width, batch_size, workers):
     #     HW_Dataset(test_filepath, csv_path, transform=test_transformer),
     #     batch_size=batch_size, num_workers=workers,
     #     shuffle=False, pin_memory=True)
+    num_classes = df_test['Id'].drop_duplicates()
 
-
-    return train_loader, test_loader#, gallery_loader
+    return train_loader, test_loader, num_classes#, gallery_loader
 
 
 def  main(args):
     # df = pd.read_csv('../dataset/label.csv')
     # num_classes = max(list(map(int,df.newId[1])))
     # print(num_classes)
-    num_classes = 5005
+    #num_classes = 5005
     #os.environ["CUDA_VISIBLE_DEVICES"] = "0"
 
     #device_ids = [0, 1, 2, 3]
@@ -96,12 +97,12 @@ def  main(args):
         args.height, args.width = (256, 256)
 
     #num_classes = 5005#get by df['Id'].nunique()
-    train_loader, test_loader = \
+    train_loader, test_loader,num_classes = \
         get_data(args.data_dir, args.height,
                  args.width, args.batch_size, args.workers,
                  )   #, test_loader
 
-
+    print(num_classes)
     # Create model
     model = models.create(args.arch, num_features=args.features,
                           dropout=args.dropout, num_classes=num_classes,cut_at_pooling=False, FCN=True)
