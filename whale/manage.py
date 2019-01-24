@@ -1,6 +1,8 @@
 #!/usr/bin/env python
 import os
 import sys
+sys.path.append("../")
+sys.path.append("../identification/")
 
 if __name__ == "__main__":
     os.environ.setdefault("DJANGO_SETTINGS_MODULE", "whale.settings")

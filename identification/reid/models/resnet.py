@@ -42,6 +42,7 @@ class ResNet(nn.Module):
 #================append conv for FCN==============================#
             self.num_features = num_features
             self.num_classes = num_classes #num_classes
+            #print(self.num_classes)
             self.dropout = dropout
             out_planes = self.base.fc.in_features
             self.local_conv = nn.Conv2d(out_planes, self.num_features, kernel_size=1,padding=0,bias=False)
@@ -127,6 +128,7 @@ class ResNet(nn.Module):
             self.reset_params()
 
     def forward(self, x):
+        #print(self.num_classes)
         for name, module in self.base._modules.items():
             if name == 'avgpool':
                 break
@@ -169,6 +171,7 @@ class ResNet(nn.Module):
             #c5 = self.instance5(x5)
             #c6 = self.instance4(x6)
             #c7 = self.instance5(x7)
+           # print(len(c0),c0)
             return out0, (c0, c1)# , c2, c3, c4, c5, c6, c7
 
 #==========================================================#
