@@ -30,14 +30,15 @@ def get_data(dataset_dir, height, width, batch_size, workers):
     test_filepath = osp.join(dataset_dir,'test/')
     test_csv_path = osp.join(dataset_dir,'test.csv')
 
-    df = pd.read_csv("../dataset/label.csv")
-    df = df.sample(frac=1)
-    cut_idx = int(round(0.2 * df.shape[0]))
-    df_test, df_train = df.iloc[:cut_idx], df.iloc[cut_idx:]
-    df_test.to_csv("label1.csv",index=0)
-    df_train.to_csv("label2.csv",index =0)
-    df_test =pd.read_csv("label1.csv")
-    df_train = pd.read_csv("label2.csv")
+    df_test = pd.read_csv("../dataset/label1.csv")
+    df_train = pd.read_csv("../dataset/label2.csv")
+    #df = df.sample(frac=1)
+    #cut_idx = int(round(0.2 * df.shape[0]))
+    #df_test, df_train = df.iloc[:cut_idx], df.iloc[cut_idx:]
+    #df_test.to_csv("label1.csv",index=0)
+    #df_train.to_csv("label2.csv",index =0)
+    #df_test =pd.read_csv("label1.csv")
+    #df_train = pd.read_csv("label2.csv")
     print(df_test,df_train)
     normalizer = T.Normalize(mean=[0.485, 0.456, 0.406],
                              std=[0.229, 0.224, 0.225])
@@ -78,7 +79,7 @@ def  main(args):
     # df = pd.read_csv('../dataset/label.csv')
     # num_classes = max(list(map(int,df.newId[1])))
     # print(num_classes)
-    num_classes = 5005
+    num_classes = 4056
     #os.environ["CUDA_VISIBLE_DEVICES"] = "0"
 
     #device_ids = [0, 1, 2, 3]
