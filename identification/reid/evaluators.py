@@ -24,7 +24,7 @@ def extract_features(model, data_loader, print_freq=10,is_train=True):
 
         outputs = extract_cnn_feature(model, imgs)
         #print(index)
-        index = index.numpy()
+       # index = index.numpy()
         #print(index)
         #print(i, len(fnames),len(outputs),len(pids))
         for idx, output, pid in zip(index, outputs, img_labels):
