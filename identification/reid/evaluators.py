@@ -70,6 +70,8 @@ def pairwise_distance(query_features, gallery_features, query=None, gallery=None
     m, n = x.size(0), y.size(0)
     x = x.view(m, -1)
     y = y.view(n, -1)
+    xy = torch.cat((x,y),dim=0)
+    np.save("feature_map.cpy",xy.numpy())
     dist = torch.pow(x, 2).sum(1).unsqueeze(1).expand(m, n) + \
            torch.pow(y, 2).sum(1).unsqueeze(1).expand(n, m).t()
     dist.addmm_(1, -2, x, y.t())#find (x-y)^2
