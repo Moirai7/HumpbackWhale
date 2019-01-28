@@ -41,20 +41,29 @@ class SmoothGrad(object):
 
     def load_image(self, filename, transform):
         raw_image = cv2.imread(filename)[:, :, ::-1]
-        raw_image = cv2.resize(raw_image, (224, 224))
+        #print(raw_image)
+        raw_image = cv2.resize(raw_image, (256, 256))
+        #print(raw_image)
         image = transform(raw_image).unsqueeze(0)
         image = image.cuda() if self.cuda else image
         self.image = Variable(image, volatile=False, requires_grad=True)
 
     def forward(self):
         self.preds = self.model.forward(self.image)
-        self.probs = F.softmax(self.preds)[0]
+        # print(self.preds)
+        #print(F.softmax(self.preds[0]))
+        self.probs = F.softmax(self.preds[0])[0]
         self.prob, self.idx = self.probs.data.sort(0, True)
         return self.prob, self.idx
 
     def encode_one_hot(self, idx):
+        print(idx)
         one_hot = torch.FloatTensor(1, self.probs.size()[-1]).zero_()
-        one_hot[0][idx] = 1.0
+        for idx_ in idx:
+            for _idx_ in idx_:
+                print(_idx_)
+                if _idx_ < one_hot.size(1):
+                    one_hot[0][_idx_] = 1.0 
         return one_hot.cuda() if self.cuda else one_hot
 
     def backward(self, idx):
