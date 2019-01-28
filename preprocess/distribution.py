@@ -18,6 +18,12 @@ classes = list(type_name_dict.values())
 counts = list(type_count_dict.values())
 
 print('print')
+k = 0
+for i in counts:
+  if i == 1:
+    k = k + 1
+print(k)
+exit(0)
 import matplotlib.pyplot as plt
 plt.style.use('seaborn-pastel')
 plt.figure(figsize=(10,10))
